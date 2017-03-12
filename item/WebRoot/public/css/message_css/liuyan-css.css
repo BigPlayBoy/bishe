@@ -1,0 +1,365 @@
+#header {
+    width: 100%;
+    height: 70px;
+    background: #333;
+    position: relative;
+}
+
+#header .header-content {
+    width: 1000px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+#header .header-content .logo {
+    width: 366px;
+}
+
+#header .header-content .logo p {
+    position: absolute;
+    left: 186px;
+    width: 200px;
+    height: 20px;
+    color: #fff;
+    bottom: 10px;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: "楷体", "Arial";
+}
+
+#header .header-content .logo img {
+    width: 166px;
+    height: 54px;
+    padding-top: 5px;
+}
+
+#header .header-content .nav {
+    width: 400px;
+    height: 70px;
+}
+
+#header .header-content .nav ul li a {
+    width: 30px;
+    height: 70px;
+    display: block;
+    float: left;
+    line-height: 70px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 30px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+    transition: 1s;
+}
+
+#header .header-content .nav ul li a:hover {
+    -webkit-transform: scale(1.5);
+    /*-webkit-transform:translate(0px,-20px);*/
+}
+
+#header .header-content .login {
+    width: 134px;
+    height: 70px;
+}
+
+#header .header-content .login ul li a {
+    width: 30px;
+    height: 70px;
+    display: block;
+    float: left;
+    line-height: 70px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 15px;
+    font-family: "Microsoft YaHei";
+    transition: 1s;
+}
+
+#header .header-content .login ul li a:hover {
+    color: #f60;
+}
+
+.person-info {
+    width: 100%;
+    height: 50px;
+    background: #e5e5e5;
+}
+
+.person-info .p-i-size {
+    width: 1000px;
+    height: 50px;
+    margin: 0 auto;
+    /*background: #00AA91;*/
+}
+
+.person-info .p-i-size span:nth-child(1) {
+    width: 608px;
+    height: 50px;
+    display: block;
+    font-size: 20px;
+    line-height: 50px;
+    font-family: "Microsoft YaHei";
+    /*background: #00b7ff;*/
+}
+
+.person-info .p-i-size span:nth-child(2) {
+    width: 83px;
+    height: 50px;
+    display: block;
+    font-size: 20px;
+    line-height: 50px;
+    font-family: "Microsoft YaHei";
+    /*background: #00FFFF;*/
+}
+
+.person-info .p-i-size span:nth-child(3) {
+    width: 309px;
+    height: 50px;
+    display: block;
+    font-size: 20px;
+    line-height: 50px;
+    font-family: "Microsoft YaHei";
+    /*background: #00FFFF;*/
+}
+
+.message {
+    width: 1000px;
+    height: 800px;
+    /*border: 1px solid red;*/
+    margin: 0 auto 10px;
+    position: relative;
+}
+
+.message .m-t {
+    width: 1000px;
+    height: 168px;
+}
+
+.message .m-t .m-t-left {
+    width: 242px;
+    height: 156px;
+    /*background: #00AA91;*/
+    border: 5px solid #fff;
+    box-shadow: 0 0 14px #90989e
+}
+.message .m-t .m-t-left ul li{
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    display: block;
+    border-bottom: 1px solid #90989e;
+    margin: 20px 0 0 10px;
+}
+.message .m-t .m-t-left ul li:nth-child(1){
+    font-size: 18px;
+    color: #000;
+    /*background: #0A8AD2;*/
+    font-weight: bold;
+    font-family: "Microsoft YaHei ", sans-serif;
+    letter-spacing: 2px;
+}
+.message .m-t .m-t-left ul li{
+    font-size: 12px;
+    color: #000;
+    /*background: #0A8AD2;*/
+    /*font-weight: bold;*/
+    font-family: "Microsoft YaHei ", sans-serif;
+    letter-spacing: 6px;
+    cursor: pointer;
+}
+.message .m-t .m-t-left ul li:nth-child(2):hover,.message .m-t .m-t-left ul li:nth-child(3):hover{
+    color: #00A388;
+    transition: 0.2s;
+}
+.message .m-t .m-t-right {
+    width: 734px;
+    height: 156px;
+    background: #0A8AD2;
+}
+
+.message .m-b {
+    width: 1000px;
+    height: 400px;
+    /*background: #FFFF66;*/
+    /*border: 1px solid #000;*/
+    position: relative;
+    margin-top: 20px;
+}
+
+.message .m-b .m-b-l {
+    width: 242px;
+    height: 240px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 14px #90989e;
+}
+.message .m-b .m-b-l li{
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    display: block;
+    margin: 20px 0 0 10px;
+}
+.message .m-b .m-b-l ul li:nth-child(1){
+    font-size: 18px;
+    color: #000;
+    /*background: #0A8AD2;*/
+    font-weight: bold;
+    font-family: "Microsoft YaHei ", sans-serif;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #90989e;
+}
+.message .m-b .m-b-l ul li span{
+    display: block;
+    margin: 4px 0 0 2px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+}
+
+.message .m-b .m-b-r {
+    width: 726px;
+    height: 602px;
+    /*background: #0A8AD2;*/
+    position: absolute;
+    border: 5px solid #fff;
+    box-shadow: 0 0 14px #90989e;
+    right: 0;
+    top: 0;
+}
+.message .m-b .m-b-r .m-b-r-first{
+    width: 726px;
+    height: 600px;
+    /*border: 1px solid #FFFF66;*/
+    display: block;
+}
+.message .m-b .m-b-r .m-b-r-first .ps ,.message .m-b .m-b-r .m-b-r-second .ps{
+    width: 704px;
+    height: 40px;
+    /*margin: 0 auto;*/
+    margin-left: 12px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: "Microsoft YaHei ", sans-serif;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 0 0 0;
+    border-bottom: 1px solid #90989e;
+}
+.message .m-b .m-b-r .m-b-r-second{
+    width: 726px;
+    height: 600px;
+    /*background: #90989e;*/
+    display: none;
+}
+.message .m-b .m-b-r .m-b-r-second .message-list{
+    width: 700px;
+    height: 530px;
+    /*border: 1px solid #FFFF66;*/
+    padding:8px 10px 0 10px;
+}
+.message .m-b .m-b-r .m-b-r-second .message-list .m-l-num{
+    width: 700px;
+    height: 140px;
+    background: #ffffc4;
+    margin-top: 20px;
+    display: block;
+    top: 2px;
+    position: relative;
+    border: 3px solid #90989e;
+}
+.message .m-b .m-b-r .m-b-r-second .message-list .m-l-num:hover{
+    box-shadow: 0 5px 10px #90989e;
+    top: -3px;
+    transition: 1s;
+}
+
+.message .m-b .m-b-r .m-b-r-second .message-list .m-l-num li p{
+    width: 100%;
+    height: auto;
+    display: block;
+    line-height: 28px;
+    font-family: "Arial Narrow", sans-serif;
+    font-size: 14px;
+    color: #00b7ff;
+    padding: 0 5px 0 5px;
+}
+
+.message .m-b .m-b-r .m-b-r-second .message-list #pages{
+    display: block;
+    margin: 16px auto 0;
+    text-align: center;
+    top: 2px;
+    position: relative;
+}
+.message .m-b .m-b-r .m-b-r-second .message-list #pages:hover{
+    top: -3px;
+    transition: 1s;
+    box-shadow: 0 0 14px #90989e;
+}
+.copyright-wrap{
+    width: 100%;
+    height: 120px;
+    background: #dddddd;
+}
+.copyright-wrap .copyright{
+    width: 1000px;
+    height: 120px;
+    /*position: relative;*/
+    /*background: #01AAED;*/
+    margin: 0 auto;
+}
+.copyright-wrap .copyright .co-left{
+    width: 580px;
+    height: 120px;
+    display: block;
+    /*background: #ff6600;*/
+    float: left;
+}
+.copyright-wrap .copyright .co-left p{
+    width: 400px;
+    height: 20px;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 50px;
+    font-family: "楷体", "Arial";
+    color: inherit;
+}
+.copyright-wrap .copyright .co-right{
+    width: 420px;
+    height: 120px;
+    display: block;
+    background: #009688;
+    float: left;
+}
+.copyright-wrap .copyright .co-right .select-btn{
+    width: 280px;
+    height: 36px;
+    display: block;
+    float: left;
+}
+.copyright-wrap .copyright .co-right .select-btn ul li,.copyright-wrap .copyright .co-right .shoucang{
+    width: 140px;
+    height: 36px;
+    background: #dddddd;
+    float: left;
+    line-height: 36px;
+    font-family: "楷体", "Arial";
+    font-size: 14px;
+    text-align: center;
+    color: #0C0C0C;
+}
+.copyright-wrap .copyright .co-right .con{
+    width: 420px;
+    height: 84px;
+    background: #ddd;
+    display: block;
+    margin-top: 36px;
+}
+.copyright-wrap .copyright .co-right .con .one p{
+    width: 420px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 30px
+}
