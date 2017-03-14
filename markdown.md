@@ -7,7 +7,7 @@
 
 > 这里是引用
 
-[Baidu] (http://baidu.com)
+[Baidu](http://baidu.com)
 ![Mou icon](http://mouapp.com/Mou_128.png)
 
 #### 无序列表
@@ -20,4 +20,4 @@
 3. 第三条
 
 **这里是粗体** *这里是斜体*
-'print("这里是代码");'
+`print("这里是代码");`
