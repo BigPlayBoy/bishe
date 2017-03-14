@@ -24,6 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <script type="text/javascript" src="public/js/shoucang.js"></script>
       <!--<script type="text/javascript" src="layui/layui.js"></script>-->
       <!--<script type="text/javascript" src="layui/lay/modules/layer.js"></script>-->
+
   </head>
   
   <body>
@@ -43,16 +44,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               </ul>
           </div>
           <div class="login fr">
-              <ul>
-<s:if test="#request.student">
-   <li> 欢迎您！<a href="view/login/login.jsp">登录1</a></li>
-</s:if><s:else>
-                  <li><a href="view/login/login.jsp">登录</a></li>
-              </s:else>
+              <%--<ul class=""></ul>--%>
+              <script type="text/javascript">
+                  var user="";
+                  var ul="<ul><li><a href='view/login/login.jsp'>登陆</a></li><li><a href='view/login/register.jsp'>注册</a></li></ul>";
+                  try {
+                      if("${sessionScope.studentInfo.studentID}"!="") user="${sessionScope.studentInfo.studentID}";
+                  }
+                  catch (e) {
+                      alert("出了错误，我也不知道是啥"+e);
+                  }
+                  var welcome="<ul><li><a href='#' style='width: 150px'> 欢迎你 "+user+"</a></li></ul>";
+                  if(""!=user){
+                      $(".login " ).append(welcome);
+                  }
+                  else {
+                      $(".login" ).append(ul);
+                  }
+                  <%--alert("${sessionScope.studentInfo.studentID}    :::"+user);--%>
+              </script>
+                  <%--<%--%>
+                      <%--String user="${sessionScope.studentInfo.studentID}";--%>
+                  <%--%>--%>
+              <%--<ul>--%>
+                  <%--<li><a href="view/login/login.jsp">登陆</a></li>--%>
+                  <%--<li><a href="view/login/register.jsp">注册</a></li>--%>
+              <%--</ul>--%>
 
-                  <li><a href="view/login/register.jsp">注册</a></li>
-              </ul>
           </div>
+
       </div>
   </div>
   <!--header ends-->

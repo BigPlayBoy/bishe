@@ -44,6 +44,7 @@ public class myLoginAction extends ActionSupport {
 			// 保存学生记录到session范围
 			Map session = ActionContext.getContext().getSession();
 			session.put("studentInfo", studentInfo);
+			System.out.println("学生ID："+studentInfo.getStudentID());
 			HttpServletRequest request = ServletActionContext.getRequest();
 //			System.out.println("输出获取到的留言内容\t"+messageBoards.get(0).getContent());
 			request.setAttribute("student", studentInfo);

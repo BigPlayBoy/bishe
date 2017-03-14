@@ -1,10 +1,19 @@
 package com.sanqing.po;
 
 public class MessageBoard {
+	private int messageId;//浏览编号
 	private String UserName;// 用户名
 	private String Theme;// 主题
 	private String Content;// 内容
 	private String Time;// 留言时间
+
+	public int getMessageId() {
+		return messageId;
+	}
+
+	public void setMessageId(int messageId) {
+		this.messageId = messageId;
+	}
 
 	public String getUserName() {
 		return UserName;
@@ -40,8 +49,12 @@ public class MessageBoard {
 
 	@Override
 	public String toString() {
-		return "MessageBoard [UserName=" + UserName + ", Theme=" + Theme + ", Content=" + Content + ", Time=" + Time
-				+ "]";
+		return "MessageBoard{" +
+				"messageId=" + messageId +
+				", UserName='" + UserName + '\'' +
+				", Theme='" + Theme + '\'' +
+				", Content='" + Content + '\'' +
+				", Time='" + Time + '\'' +
+				'}';
 	}
-
 }

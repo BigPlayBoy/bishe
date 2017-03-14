@@ -120,10 +120,24 @@
             </ul>
         </div>
         <div class="login fr">
-            <ul>
-                <li><a href="../login/login.jsp">登录</a></li>
-                <li><a href="../login/register.jsp">注册</a></li>
-            </ul>
+            <script type="text/javascript">
+                var user="";
+                var ul="<ul><li><a href='view/login/login.jsp'>登陆</a></li><li><a href='view/login/register.jsp'>注册</a></li></ul>";
+                try {
+                    if("${sessionScope.studentInfo.studentID}"!="") user="${sessionScope.studentInfo.studentID}";
+                }
+                catch (e) {
+                    alert("出了错误，我也不知道是啥"+e);
+                }
+                var welcome="<ul><li><a href='#' style='width: 150px'> 欢迎你 "+user+"</a></li></ul>";
+                if(""!=user){
+                    $(".login " ).append(welcome);
+                }
+                else {
+                    $(".login" ).append(ul);
+                }
+                <%--alert("${sessionScope.studentInfo.studentID}    :::"+user);--%>
+            </script>
         </div>
     </div>
 </div>
@@ -192,7 +206,7 @@
                         <label class="layui-form-label">留言人姓名</label>
                         <div class="layui-input-block">
                             <input type="text" name="UserName" lay-verify="title" autocomplete="off" placeholder="请输入姓名"
-                                   class="layui-input">
+                                   class="layui-input" value="崔明辉">
                         </div>
                     </div>
                     <div class="layui-form-item">

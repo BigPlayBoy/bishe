@@ -1,7 +1,9 @@
 package com.sanqing.action;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.sanqing.po.MessageBoard;
+import com.sanqing.po.Student;
 import com.sanqing.service.MessageBoardService;
 import com.sanqing.service.MessageBoardServiceImpl;
 import com.sanqing.util.Page;
@@ -10,6 +12,7 @@ import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by jarvis on 2017/2/21.
@@ -37,6 +40,13 @@ private MessageBoardService messageBoardService=new MessageBoardServiceImpl();
 
     public String execute() throws Exception {
         System.out.println("获取留言信息");
+        //这里要先判断是不是登陆了
+        Map session = ActionContext.getContext().getSession();
+        Student student = (Student)session.get("studentInfo");
+        if(student==null){
+            System.out.println("没有登陆，不能访问");
+            return "notLogin";
+        }
         Page page = new Page();
         page.setEveryPage(3);//每页显示10条记录
         page.setCurrentPage(currentPage);//设置当前页

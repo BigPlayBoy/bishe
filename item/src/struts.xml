@@ -57,10 +57,13 @@
 			<result name="msuccess" type="chain">queryMessageAction</result><!--跳转到学生管理页面-->
 		</action>
 		<action name="queryMessageAction" class="com.sanqing.action.QueryMessageAction">
-			<result name="isSuccess" >/view/liuyanban/message.jsp</result><!--跳转到学生管理页面-->
+			<result name="isSuccess" type="redirect">/view/liuyanban/message.jsp</result><!--跳转到留言界面-->
+			<result name="notLogin" type="redirect" >/index.jsp</result><!--没有登陆，退到登陆界面-->
 		</action>
 		<action name="messageQuery" class="com.sanqing.action.QueryMessageAction">
-			<result name="isSuccess" >/view/liuyanban/message.jsp</result><!--跳转到试题列表管理页面-->
+			<result name="isSuccess" >/view/liuyanban/message.jsp</result><!--跳转到留言页面-->
+			<result name="notLogin" type="redirect" >/index.jsp</result><!--没有登陆，退到登陆界面-->
+
 		</action>
  	</package>
 </struts>
