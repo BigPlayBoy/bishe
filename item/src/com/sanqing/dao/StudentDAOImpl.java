@@ -12,9 +12,9 @@ import com.sanqing.po.Student;
 import com.sanqing.po.Subject;
 
 public class StudentDAOImpl implements StudentDAO{
-	public Student findByStudentID(String studentID) {
+	public Student findByStudentId(String studentId) {
 		Session session = HibernateSessionFactory.getSession();//获得Session对象
-		Student student = (Student) session.get(Student.class, studentID);
+		Student student = (Student) session.get(Student.class, studentId);
 		HibernateSessionFactory.closeSession();//关闭Session对象
 		return student;
 	}
@@ -50,6 +50,8 @@ public class StudentDAOImpl implements StudentDAO{
 		HibernateSessionFactory.closeSession();		//关闭Session对象
 		return list;
 	}
+
+
 
 	@Override
 	public boolean insertStudent(Student student) {

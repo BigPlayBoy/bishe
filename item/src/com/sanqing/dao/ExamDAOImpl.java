@@ -1,5 +1,6 @@
 package com.sanqing.dao;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -10,10 +11,9 @@ import com.sanqing.po.Exam;
 import java.util.List;
 
 public class ExamDAOImpl implements ExamDAO{
-
+	private static Logger logger = Logger.getLogger(ExamDAOImpl.class);
 	@Override
 	public Boolean insertEaxmResult(Exam exam) {
-		// TODO Auto-generated method stub
 				Session session=HibernateSessionFactory.getSession();//获得session对象
 				Transaction  transaction = null;//声明一个事务对象
 				try{
@@ -23,8 +23,11 @@ public class ExamDAOImpl implements ExamDAO{
 				}catch(Exception ex) {
 					ex.printStackTrace();
 					transaction.rollback();//事务回滚
+					logger.error("保存考試信息失败");
+
+					return false;
 				}
-				System.out.println("保存考試信息成功");
+		logger.info("保存考試信息成功");
 				return true;
 	}
 

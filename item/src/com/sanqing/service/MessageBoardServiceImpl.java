@@ -7,16 +7,19 @@ import com.sanqing.po.Subject;
 import com.sanqing.util.Page;
 import com.sanqing.util.PageResult;
 import com.sanqing.util.PageUtil;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 public class MessageBoardServiceImpl implements MessageBoardService{
+    private static Logger logger = Logger.getLogger(MessageBoardServiceImpl.class);
+
     private MessageBoardDAO messageBoardDAO=new MessageBoardDAOImpl();
 
     @Override
     public boolean saveMessage(MessageBoard messageBoard) {
         messageBoardDAO.insertMessage(messageBoard);
-        System.out.println("保存成功");
+        logger.info("保存成功");
         return false;
     }
 

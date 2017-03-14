@@ -4,11 +4,11 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="com.sanqing.po.Student" table="student_tb"><!-- 每个class对应一个持久化对象 -->
-		<id name="StudentID" type="string"><!-- id元素用来定义主键标识,并指定主键生成策略 -->
-			<generator class="assigned"></generator>
+		<id name="StudentId" type="string"><!-- id元素用来定义主键标识,并指定主键生成策略 -->
+			<generator class="assigned"/>
 		</id>
-		<property name="studentName"></property><!-- 映射studentName属性 -->
-		<property name="StudentPassword"></property><!-- 映射password属性 -->
-		<property name="salt"></property><!-- 映射salt属性 -->
+		<property name="studentName"/><!-- 映射studentName属性 -->
+		<property name="StudentPassword"/><!-- 映射password属性 -->
+		<property name="salt"/><!-- 映射salt属性 -->
 	</class>
 </hibernate-mapping>

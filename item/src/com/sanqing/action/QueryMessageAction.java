@@ -8,6 +8,7 @@ import com.sanqing.service.MessageBoardService;
 import com.sanqing.service.MessageBoardServiceImpl;
 import com.sanqing.util.Page;
 import com.sanqing.util.PageResult;
+import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,8 @@ import java.util.Map;
  *
  */
 public class QueryMessageAction extends ActionSupport {
+    private static Logger logger = Logger.getLogger(QueryMessageAction.class);
+
     private int currentPage;		//当前页
     private int isFirst;//是否第一次打开页面
 private MessageBoardService messageBoardService=new MessageBoardServiceImpl();
@@ -39,12 +42,12 @@ private MessageBoardService messageBoardService=new MessageBoardServiceImpl();
     }
 
     public String execute() throws Exception {
-        System.out.println("获取留言信息");
+        logger.info("获取留言信息");
         //这里要先判断是不是登陆了
         Map session = ActionContext.getContext().getSession();
         Student student = (Student)session.get("studentInfo");
         if(student==null){
-            System.out.println("没有登陆，不能访问");
+            logger.info("没有登陆，不能访问");
             return "notLogin";
         }
         Page page = new Page();
@@ -55,7 +58,7 @@ private MessageBoardService messageBoardService=new MessageBoardServiceImpl();
         page = pageResult.getPage();//获得分页信息
 
         HttpServletRequest request = ServletActionContext.getRequest();
-        System.out.println("输出获取到的留言内容\t"+messageBoards.get(0).getContent());
+        logger.info("输出获取到的留言内容\t"+messageBoards.get(0));
         request.setAttribute("messageBoards", messageBoards);
         request.setAttribute("page", page);
         request.setAttribute("isFirst",isFirst);//记录是否是第一次打开

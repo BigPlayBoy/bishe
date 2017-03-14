@@ -6,6 +6,7 @@ import com.sanqing.po.MessageBoard;
 import com.sanqing.po.Student;
 import com.sanqing.service.MessageBoardService;
 import com.sanqing.service.MessageBoardServiceImpl;
+import org.apache.log4j.Logger;
 
 import java.util.Map;
 
@@ -13,7 +14,9 @@ import java.util.Map;
  * Created by jarvis on 2017/2/20.
  */
 public class LiuYan extends ActionSupport {
-private String UserName;
+    private static Logger logger = Logger.getLogger(LiuYan.class);
+
+    private String UserName;
     private String Theme;
     private String Content;
     private String Time;
@@ -59,7 +62,7 @@ private MessageBoardService messageBoardService=new MessageBoardServiceImpl();
         messageBoard.setTheme(Theme);
         messageBoard.setTime(Time);
 messageBoardService.saveMessage(messageBoard);
-        System.out.println("123456789");
+        logger.info("123456789");
         return "msuccess";
         }
 }

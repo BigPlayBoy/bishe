@@ -4,18 +4,18 @@ package com.sanqing.po;
  * 学生表,保存学生编号，系统密码
  */
 public class Student {
-	private String studentID;
+	private String studentId;
 	
 	private String studentName;
 	private String studentPassword;
 	private String salt;
 	
-	public String getStudentID() {
-		return studentID;
+	public String getStudentId() {
+		return studentId;
 	}
 
-	public void setStudentID(String studentID) {
-		this.studentID = studentID;
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
 	}
 
 	

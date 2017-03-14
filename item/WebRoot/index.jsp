@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   var user="";
                   var ul="<ul><li><a href='view/login/login.jsp'>登陆</a></li><li><a href='view/login/register.jsp'>注册</a></li></ul>";
                   try {
-                      if("${sessionScope.studentInfo.studentID}"!="") user="${sessionScope.studentInfo.studentID}";
+                      if("${sessionScope.studentInfo.studentName}"!="") user="${sessionScope.studentInfo.studentName}";
                   }
                   catch (e) {
                       alert("出了错误，我也不知道是啥"+e);

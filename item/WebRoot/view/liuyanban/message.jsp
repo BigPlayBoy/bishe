@@ -124,7 +124,7 @@
                 var user="";
                 var ul="<ul><li><a href='view/login/login.jsp'>登陆</a></li><li><a href='view/login/register.jsp'>注册</a></li></ul>";
                 try {
-                    if("${sessionScope.studentInfo.studentID}"!="") user="${sessionScope.studentInfo.studentID}";
+                    if("${sessionScope.studentInfo.studentName}"!="") user="${sessionScope.studentInfo.studentName}";
                 }
                 catch (e) {
                     alert("出了错误，我也不知道是啥"+e);
@@ -206,7 +206,7 @@
                         <label class="layui-form-label">留言人姓名</label>
                         <div class="layui-input-block">
                             <input type="text" name="UserName" lay-verify="title" autocomplete="off" placeholder="请输入姓名"
-                                   class="layui-input" value="崔明辉">
+                                   class="layui-input" value="${sessionScope.studentInfo.studentName}">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -243,7 +243,6 @@
             <div class="m-b-r-second">
                 <p class="ps">留言列表</p>
                 <div class="message-list">
-
                     <s:iterator value="#request.messageBoards" var="messageBoard">
                         <div class="m-l-num" style="margin-top: 0">
                             <ul>
@@ -256,7 +255,6 @@
                             </ul>
                         </div>
                     </s:iterator>
-
 
                         <div >
                             共${page.totalCount}条纪录，当前第${page.currentPage}/${page.totalPage}页，每页${page.everyPage}条纪录

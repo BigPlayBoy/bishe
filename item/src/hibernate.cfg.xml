@@ -15,7 +15,7 @@
         <property name="connection.username">bdm256204632</property>	<!-- 数据库用户名 -->
         <property name="connection.password">cuiminghui1994</property>	<!-- 数据库用户密码 -->
 
-        <property name="connection.driver_class">				<!-- 数据库驱动类 -->
+        <property name="connection.driver_class"><!-- 数据库驱动类 -->
         	com.mysql.jdbc.Driver</property>
         <property name="hibernate.show_sql">true</property>
         <mapping resource="com/sanqing/po/Student.hbm.xml"/>
@@ -23,5 +23,7 @@
         <mapping resource="com/sanqing/po/Subject.hbm.xml"/>
         <mapping resource="com/sanqing/po/Exam.hbm.xml"/>
         <mapping resource="com/sanqing/po/MessageBoard.hbm.xml"/>
+        <mapping resource="com/sanqing/po/Course.hbm.xml"/>
+
     </session-factory>
 </hibernate-configuration>

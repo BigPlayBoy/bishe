@@ -22,7 +22,8 @@ CREATE TABLE `student_tb` (
   `StudentID` varchar(10) NOT NULL,
   `StudentName` varchar(255) DEFAULT '',
   `StudentPassword` varchar(255) DEFAULT NULL,
-  `salt` varchar(255) DEFAULT NULL
+  `salt` varchar(255) NULL,
+  PRIMARY KEY (`StudentID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='学生信息表';
 INSERT INTO `student_tb` VALUES ('1330090002','崔明辉','123456','0509302');
 INSERT INTO `student_tb` VALUES ('1330090007','王涛','123456','0509301');
@@ -88,7 +89,9 @@ CREATE TABLE `messageboard_tb` (
   `Content` VARCHAR(200) DEFAULT NULL ,
   `Time` VARCHAR(20) DEFAULT 1994,
   PRIMARY KEY  (`messageId`)
-) ENGINE=InnoDB DEFAULT CHARSET=gb2312 COMMENT='留言表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='留言表';
+INSERT INTO `messageboard_tb` VALUES (1,'崔明辉','测试代码','这里是测试代码，创建数据库时自动生成的','20170101');
+
 /*考试成绩表*/
 CREATE TABLE `exam_tb` (
   `studentId` varchar(10) DEFAULT NULL,
@@ -96,6 +99,18 @@ CREATE TABLE `exam_tb` (
   `result` int(11) DEFAULT NULL,
   `time` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `exam_tb` VALUES ('1330090002','崔明辉','99','20170102');
+
+/*课程资源表格*/
+CREATE TABLE `course_tb` (
+  `courseId` int not null,
+  `courseName` varchar(20) NOT NULL default '',
+  `courseUrl` varchar(120) default NULL,
+  `courseBeizhu` VARCHAR(20) DEFAULT NULL ,
+  PRIMARY KEY  (`courseId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='课程资源表';
+INSERT INTO `course_tb` VALUES (1,'社会主义核心价值观','/aaa/bbb/ccc.txt','这里是测试代码，创建数据库时自动生成的');
+
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

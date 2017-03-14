@@ -4,16 +4,20 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.sanqing.dao.ExamDAOImpl;
 import com.sanqing.po.Student;
 import com.sanqing.service.StudentService;
 import com.sanqing.service.StudentServiceImpl;
 import com.sanqing.service.TeacherService;
 import com.sanqing.service.TeacherServiceImpl;
+import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class myLoginAction extends ActionSupport {
+	private static Logger logger = Logger.getLogger(myLoginAction.class);
+
 	private String StudentId; // 接受用户编号
 	private String StudentPassword; // 接受用户密码
 	private StudentService studentService = new StudentServiceImpl();// 学生业务逻辑组件引用
@@ -37,14 +41,13 @@ public class myLoginAction extends ActionSupport {
 	}
 
 	public String execute() throws Exception {
-		System.out.println("學生id："+StudentId+"\t學生密碼："+StudentPassword);
-		System.out.println(studentService.getStudentInfo(getStudentId()));
+		logger.info("學生id："+StudentId+"\t學生密碼："+StudentPassword);
 		if (studentService.allowLogin(StudentId, StudentPassword)) {
 			Student studentInfo = studentService.getStudentInfo(StudentId);
 			// 保存学生记录到session范围
 			Map session = ActionContext.getContext().getSession();
 			session.put("studentInfo", studentInfo);
-			System.out.println("学生ID："+studentInfo.getStudentID());
+			logger.info("学生ID："+studentInfo.getStudentId());
 			HttpServletRequest request = ServletActionContext.getRequest();
 //			System.out.println("输出获取到的留言内容\t"+messageBoards.get(0).getContent());
 			request.setAttribute("student", studentInfo);

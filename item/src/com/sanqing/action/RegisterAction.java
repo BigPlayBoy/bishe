@@ -7,8 +7,11 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.sanqing.po.Student;
 import com.sanqing.service.StudentService;
 import com.sanqing.service.StudentServiceImpl;
+import org.apache.log4j.Logger;
 
 public class RegisterAction extends ActionSupport{
+	private static Logger logger = Logger.getLogger(RegisterAction.class);
+
 	private String studentId;//学生学号
 	private String studentName; // 接受用户姓名
 	private String password; // 接受用户密码
@@ -39,17 +42,18 @@ public class RegisterAction extends ActionSupport{
 	}
 
 	public String execute() throws Exception {
-		System.out.println("信息获取：学号："+studentId+"\t姓名"+studentName+"\t密码"+password);
-		if(studentService.getStudentByName(studentName).isEmpty()){//不存在该用户
+		logger.info("信息获取：学号："+studentId+"\t姓名"+studentName+"\t密码"+password);
+		if(studentService.getStudentById(studentId)==null){//不存在该用户
 			Student student=new Student();
-			student.setStudentID(studentId);
+			student.setStudentId(studentId);
 			student.setStudentPassword(password);
 			student.setStudentName(studentName);
 			studentService.saveStudent(student);
-			System.out.println("保存用户成功！！");
+			logger.info("保存用户成功！！");
 			return "registerSuccess";
 		}else{
-			addActionError("该学生编号不存在，或者密码不正确!");
+			logger.error("该ID已存在，不能注册");
+			addActionError("该ID已存在，不能注册!");
 			return this.INPUT;
 		}
 		
