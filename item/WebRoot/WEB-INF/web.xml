@@ -17,4 +17,7 @@
 		<filter-name>struts2</filter-name><!--核心Filter的名称 -->
 		<url-pattern>/*</url-pattern><!--使用该核心Filter过滤所有的Web请求 -->
 	</filter-mapping>
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
 </web-app>

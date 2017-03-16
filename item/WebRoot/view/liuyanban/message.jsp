@@ -116,7 +116,7 @@
                 <li><a href="../../index.jsp" target="_blank">首页</a></li>
                 <li><a href="#">课程</a></li>
                 <li><a href="#">资源</a></li>
-                <li><a href="#">讨论</a></li>
+                <li><a href="messageQuery.action">讨论</a></li>
             </ul>
         </div>
         <div class="login fr">
@@ -136,8 +136,13 @@
                 else {
                     $(".login" ).append(ul);
                 }
-                <%--alert("${sessionScope.studentInfo.studentID}    :::"+user);--%>
+                <%--alert("${sessionScope.studentInfo.studentId}    :::"+user);--%>
             </script>
+            <%--<s:if test="#request.messageBoards">--%>
+                <%--<script type="text/javascript">--%>
+                    <%--alert("这里是测试！");--%>
+                <%--</script>--%>
+            <%--</s:if>--%>
         </div>
     </div>
 </div>
@@ -217,7 +222,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <div class="layui-inline">
+                        <div class="layui-inline" hidden>
                             <label class="layui-form-label">留言日期</label>
                             <div class="layui-input-block">
                                 <input type="text" name="Time" id="date" lay-verify="date" placeholder="yyyy-mm-dd"
@@ -243,7 +248,7 @@
             <div class="m-b-r-second">
                 <p class="ps">留言列表</p>
                 <div class="message-list">
-                    <s:iterator value="#request.messageBoards" var="messageBoard">
+                    <s:iterator value="#request.messageBoards" id="messageBoard">
                         <div class="m-l-num" style="margin-top: 0">
                             <ul>
                                <li><p>用户名：<span><s:property value="#messageBoard.UserName" /> </span></p></li> <%--${messageBoard.UserName}--%>
@@ -274,37 +279,7 @@
                             </s:else>
                         </div>
 
-                     <%--<div class="m-l-num" style="margin-top: 0">--%>
-                        <%--<ul>--%>
-                            <%--<li><p>用户名：<span>MrWangtao</span></p></li>--%>
-                            <%--<li><p>主题：<span>数据库的概念是什么：</span></p></li>--%>
-                            <%--<li><p>--%>
-                                <%--内容：<span>数据库(Database)是按照数据结构来组织、存储和管理数据的仓库，它产生于距今六十多年前，随着信息技术和市场的发展，特别是二十世纪九十年代以后，</span>--%>
-                            <%--</p></li>--%>
-                            <%--<li><p>时间：<span>2017-2-11</span></p></li>--%>
-                        <%--</ul>--%>
-                     <%--</div>--%>
-                    <%--<div class="m-l-num">--%>
-                        <%--<ul>--%>
-                            <%--<li><p>用户名：<span>MrWangtao</span></p></li>--%>
-                            <%--<li><p>主题：<span>数据库的概念是什么：</span></p></li>--%>
-                            <%--<li><p>--%>
-                                <%--内容：<span>数据库(Database)是按照数据结构来组织、存储和管理数据的仓库，它产生于距今六十多年前，随着信息技术和市场的发展，特别是二十世纪九十年代以后，</span>--%>
-                            <%--</p></li>--%>
-                            <%--<li><p>时间：<span>2017-2-11</span></p></li>--%>
-                        <%--</ul>--%>
-                    <%--</div>--%>
-                    <%--<div class="m-l-num">--%>
-                        <%--<ul>--%>
-                            <%--<li><p>用户名：<span>MrWangtao</span></p></li>--%>
-                            <%--<li><p>主题：<span>数据库的概念是什么：</span></p></li>--%>
-                            <%--<li><p>--%>
-                                <%--内容：<span>数据库(Database)是按照数据结构来组织、存储和管理数据的仓库，它产生于距今六十多年前，随着信息技术和市场的发展，特别是二十世纪九十年代以后，</span>--%>
-                            <%--</p></li>--%>
-                            <%--<li><p>时间：<span>2017-2-11</span></p></li>--%>
-                        <%--</ul>--%>
-                    <%--</div>--%>
-                    <%--<div id="pages"></div>--%>
+
                 </div>
 
             </div>

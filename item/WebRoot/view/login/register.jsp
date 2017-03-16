@@ -28,7 +28,7 @@
     <p>用户注册</p>
     <div class="register-container">
         <form action="register.action" method="post" ><%-- id="registerForm"--%>
-            <div><FONT color="red"><s:actionerror/></FONT></td><!--显示错误信息 --></div>
+            <div><FONT color="red"><s:actionerror/></FONT><!--显示错误信息 --></div>
             <div>
                 <input type="text" name="studentId" class="username" placeholder="您的用户名" autocomplete="off"/>
             </div>
