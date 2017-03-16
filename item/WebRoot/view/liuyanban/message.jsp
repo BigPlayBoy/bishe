@@ -221,8 +221,8 @@
                                    class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <div class="layui-inline" hidden>
+                    <div class="layui-form-item" hidden>
+                        <div class="layui-inline" >
                             <label class="layui-form-label">留言日期</label>
                             <div class="layui-input-block">
                                 <input type="text" name="Time" id="date" lay-verify="date" placeholder="yyyy-mm-dd"
