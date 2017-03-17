@@ -27,13 +27,19 @@
     <script src="../../public/js/login_js/supersized-init.js"></script>
     <!--表单验证-->
     <script src="../../public/js/login_js/jquery.validate.min.js?var1.14.0"></script>
+    <script type="text/javascript">
+        if("<s:actionerror/>".length!=0){
+            alert("<s:actionerror/>");//弹窗显示错误信息
+        }
+    </script>
+
 </head>
 <body>
 <div class="wrap-login">
     <p>用户登录</p>
     <div class="login-container">
         <form action="mylogin.action" method="post" id="loginForm">
-            <div>
+            <div><s:actionerror/>
                 <input type="text" name="StudentId" class="username" placeholder="用户名" autocomplete="off"/>
             </div>
             <div>
@@ -42,7 +48,7 @@
             </div>
             <button id="submit" type="submit">登 陆</button>
         </form>
-        <a href="register.jsp">
+        <a href="/view/login/register.jsp">
             <button type="button" class="register-tis">还有没有账号？</button>
         </a>
     </div>

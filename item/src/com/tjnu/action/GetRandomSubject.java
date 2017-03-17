@@ -20,6 +20,7 @@ public class GetRandomSubject extends ActionSupport{
 		List<Subject> subjects = subjectService.randomFindSubject(20);//获得试题记录
 		HttpServletRequest request = ServletActionContext.getRequest();
 		request.setAttribute("subjects", subjects);
+		System.out.println(subjects.get(0));
 		return SUCCESS;
 	}
 }

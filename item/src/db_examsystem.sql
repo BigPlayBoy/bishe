@@ -111,6 +111,26 @@ CREATE TABLE `course_tb` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='课程资源表';
 INSERT INTO `course_tb` VALUES (1,'社会主义核心价值观','/aaa/bbb/ccc.txt','这里是测试代码，创建数据库时自动生成的');
 
+/*pdf资源表格*/
+CREATE TABLE `pdf_tb`(
+  `pptId` int(11) NOT NULL AUTO_INCREMENT,
+  `pptName` VARCHAR(20) ,
+  `pptDetail` VARCHAR(255),
+  PRIMARY KEY (`pptId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='pdf资源表';
+INSERT INTO `pdf_tb` VALUES (1,'社会主义核心价值观','社会主义核心价值观介绍，富强民主，文明，和谐');
+
+/*------- CREATE SQL---------*/
+CREATE TABLE `pdfUrls_tb` (
+  `pptUrlsId` int(11) NOT NULL AUTO_INCREMENT,
+  `pptId` int(11) DEFAULT NULL,
+  `pptUrl` varchar(255) DEFAULT '/err.pdf',
+  `pptUrlDetail` varchar(255) DEFAULT NULL ,
+  PRIMARY KEY (`pptUrlsId`),
+  KEY `f_pdfId` (`pptId`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+INSERT INTO `pdfUrls_tb` VALUES (1,1,'/qwer/q.pdf','这里是一段介绍');
+
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

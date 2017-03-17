@@ -73,7 +73,7 @@
 	              <td height="21"><table cellSpacing="0" cellPadding="0" width="100%" border="0" id="table211" height="328">
 	                  <tr>
 	                    <td height="164" colspan="2" align="middle">
-	                    	<form name="myform" action="login.action" method="post">
+	                    	<form name="myform" action="teacherlogin.action" method="post">
 	                        <table cellSpacing="0" cellPadding="0" width="100%" border="0" height="143" id="table212">
 	                          <tr>
 	                          	<td colspan="2"><FONT color="red"><s:actionerror/></FONT></td><!--ÏÔÊ¾´íÎóÐÅÏ¢ -->

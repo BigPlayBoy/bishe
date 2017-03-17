@@ -59,4 +59,18 @@ public class Subject {
 	public void setSubjectParse(String subjectParse) {
 		this.subjectParse = subjectParse;
 	}
+
+	@Override
+	public String toString() {
+		return "Subject{" +
+				"subjectID=" + subjectID +
+				", subjectTitle='" + subjectTitle + '\'' +
+				", subjectOptionA='" + subjectOptionA + '\'' +
+				", subjectOptionB='" + subjectOptionB + '\'' +
+				", subjectOptionC='" + subjectOptionC + '\'' +
+				", subjectOptionD='" + subjectOptionD + '\'' +
+				", subjectAnswer='" + subjectAnswer + '\'' +
+				", subjectParse='" + subjectParse + '\'' +
+				'}';
+	}
 }

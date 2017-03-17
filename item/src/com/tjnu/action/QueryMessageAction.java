@@ -48,6 +48,7 @@ private MessageBoardService messageBoardService=new MessageBoardServiceImpl();
         Student student = (Student)session.get("studentInfo");
         if(student==null){
             logger.info("没有登陆，不能访问");
+            addActionError("请先登陆！");
             return "notLogin";
         }
         Page page = new Page();
