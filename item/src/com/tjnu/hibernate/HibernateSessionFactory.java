@@ -44,8 +44,7 @@ public class HibernateSessionFactory {
 			sessionFactory = 
 				configuration.buildSessionFactory();//根据配置文件创建sessionFactory对象
 		} catch (Exception e) {
-			System.err
-					.println("%%%% Error Creating SessionFactory %%%%");
+			System.err.println("%%%% Error Creating SessionFactory %%%%");
 			e.printStackTrace();
 		}
 	}

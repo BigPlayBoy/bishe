@@ -86,10 +86,10 @@
         <div class="nav fl">
             <ul>
                 <li><a href="../../index.jsp" target="_blank">首页</a></li>
-                <li><a href="jiaocai.action" target="_blank">教材</a> </li>
-                <li><a href="../../video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
-                <li><a href="messageQuery.action" target="_blank">讨论</a></li>
-                <li><a href="exam.action" target="_blank">测试</a> </li>
+                <li><a href="../ppt_sourse/ppt_sourse.jsp" target="_blank">教材</a></li>
+                <li><a href="../video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
+                <li><a href="../liuyanban/message.jsp" target="_blank">讨论</a></li>
+                <li><a href="#">考试</a></li>
             </ul>
         </div>
         <div class="person fr">
@@ -124,65 +124,28 @@
         </div>
     </div>
     <div class="t-c-list">
-        <table border="0" cellpadding="0" cellspacing="0" class="centerbg">
+        <table width="1003" height="485" border="0" cellpadding="0" cellspacing="0" class="centerbg">
             <tr>
                 <td width="149" height="485">&nbsp;</td>
                 <td width="741" valign="top" class="rightbian">
-                    <form action="submitExam.action" method="post">
-                        <table width="98%" border="0" align="center" cellpadding="0" cellspacing="10">
-                            <tr>
-                                <td><div align="center" class="STYLE3">考试时间：120 分钟</div></td>
-                                <td><div align="center" class="STYLE3">考生：${sessionScope.studentInfo.studentName}</div></td>
-                                <td><div align="center" class="STYLE3">总分 ：100 分</div></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td><div id="tTime"></div></td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" bgcolor="#999999" class="STYLE4">选择题(每小题5分，共20个)</td>
-                            </tr>
-                            <!--题目开始-->
-
-                            <s:iterator value="#request.subjects" var="subject" status="sta">
-                            <tr>
-                                <input type="hidden" name="subjectID" value="${subject.subjectID}"/>
-                                <td colspan="3"><strong>第<span class="STYLE5">${sta.index + 1}</span>题&nbsp;${subject.subjectTitle}</strong>		</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3"><strong>A．</strong>${subject.subjectOptionA}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3"><strong>B．</strong>${subject.subjectOptionB}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3"><strong>C．</strong>${subject.subjectOptionC}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3"><strong>D．</strong>${subject.subjectOptionD}</td>
-                            </tr>
-                            <tr>
-                                <td height="32" colspan="3" bgcolor="#CCCCCC">选择答案：
-                                    <input type="radio" name="subjectAnswer${sta.index}" value="A" checked="checked"/>
-                                    A
-                                    <input type="radio" name="subjectAnswer${sta.index}" value="B" />
-                                    B
-                                    <input type="radio" name="subjectAnswer${sta.index}" value="C" />
-                                    C
-                                    <input type="radio" name="subjectAnswer${sta.index}" value="D" />
-                                    D</td>
-                            </tr>
-                            </s:iterator>
-                            <!--题目结束-->
-                            <tr>
-                                <td colspan="3"><div align="center">
-                                    <input class="sub-button" type="submit" value=" 提交答卷 " name="Submit" />
-                                </div></td>
-                            </tr>
-                        </table>
-                    </form>
-                </td>
+                    <table width="60%" align="center" cellpadding="10" cellspacing="0" border="1">
+                        <tr>
+                            <td height="35" colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td height="49" colspan="2"><div align="center"><span class="STYLE4"><strong>eggpeijun</strong>考试情况表</span></div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">考试姓名:${request.studentName}</div></td>
+                            <td><div align="center">考生得分:${request.GeneralPoint}分</div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><div align="center"><a href="showSubjectAnswer.action">查看答案</a></div></td>
+                        </tr>
+                    </table></td>
                 <td width="113">&nbsp;</td>
             </tr>
         </table>

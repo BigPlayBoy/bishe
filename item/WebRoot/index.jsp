@@ -37,10 +37,10 @@
         </div>
         <div class="nav fl">
             <ul>
-                <li><a href="#">首页</a></li>
+                <li><a href="index.jsp">首页</a></li>
                 <li><a href="jiaocai.action" target="_blank">教材</a> </li>
-                <li><a href="view/video_course_sourse/video_course_sourse.html" target="_blank">视频</a></li>
-                <li><a href="view/liuyanban/message.html" target="_blank">讨论</a></li>
+                <li><a href="view/video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
+                <li><a href="messageQuery.action" target="_blank">讨论</a></li>
                 <li><a href="exam.action" target="_blank">测试</a> </li>
             </ul>
         </div>
@@ -62,10 +62,6 @@
                     $(".login" ).append(ul);
                 }
             </script>
-            <%--<ul>--%>
-            <%--<li><a href="view/login/login.html">登录</a></li>--%>
-            <%--<li><a href="view/login/register.html">注册</a></li>--%>
-            <%--</ul>--%>
         </div>
     </div>
 </div>
@@ -82,10 +78,7 @@
                 <li><a href=""><img src="images/banner4.jpg"></a></li>
             </ul>
         </div>
-        <!--<div class="b_m_btn">-->
-        <!--<div class="b_m_b_left"></div>-->
-        <!--<div class="b_m_b_right"></div>-->
-        <!--</div>-->
+
         <div class="b_m_b_left"></div>
         <div class="b_m_b_right"></div>
         <div class="b_m_tab">

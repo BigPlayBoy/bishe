@@ -2,7 +2,8 @@
     width: 1226px;
     height: 1136px;
     margin: 0 auto;
-    border: 1px solid #0A8AD2;
+    /*border: 1px solid #0A8AD2;*/
+    padding-bottom: 32px;
 }
 .ppt-content .nav {
     width: 1226px;
@@ -33,7 +34,8 @@
 .ppt-content .focus-img{
     width: 1226px;
     height: 340px;
-    border: 1px solid #FFFF66;
+    border: 5px solid #fff;
+    box-shadow: 0 0 14px #90989e
 }
 
 .container { margin:0 auto; width:1000px;}
@@ -81,7 +83,8 @@
 .ppt-content .ppt-show{
     width: 1226px;
     height: 594px;
-    border: 1px solid #000;
+    border: 5px solid #fff;
+    box-shadow: 0 0 14px #90989e;
 }
 /*.ppt-content .ppt-show .ppt-show-l{*/
     /*width: 206px;*/
@@ -117,10 +120,9 @@
 }
 .ppt-content .ppt-show .ppt-show-t .layui-tab .layui-tab-content{
     height: 516px !important;
-    border: 1px solid #FFFF66;
+    /*border: 1px solid #FFFF66;*/
     overflow: scroll;
 }
-
 .ppt-content .ppt-show .ppt-show-t .layui-tab .layui-tab-content .layui-tab-item .download{
     width: 105px;
     height: auto;

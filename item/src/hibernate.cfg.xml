@@ -19,7 +19,7 @@
         	com.mysql.jdbc.Driver</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.connection.pool.size">20 </property>
-
+<property name="hibernate.c3p0.timeout">1200</property>
         <!--<property name="hibernate.connection.provider_class">-->
             <!--org.hibernate.connection.C3P0ConnectionProvider-->
         <!--</property>-->
@@ -39,6 +39,8 @@
         <mapping resource="com/tjnu/po/Exam.hbm.xml"/>
         <mapping resource="com/tjnu/po/MessageBoard.hbm.xml"/>
         <mapping resource="com/tjnu/po/Course.hbm.xml"/>
+        <mapping resource="com/tjnu/po/Ppt.hbm.xml"/>
+        <mapping resource="com/tjnu/po/PptUrls.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

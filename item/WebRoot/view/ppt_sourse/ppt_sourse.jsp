@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<s:set name="isFirest" value="yes"/>
 <html>
 
 <head>
@@ -32,16 +34,15 @@
         <div class="nav fl">
             <ul>
                 <li><a href="../../index.jsp" target="_blank">首页</a></li>
-                <li><a href="#">教材</a></li>
-                <li><a href="../video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
-                <li><a href="../liuyanban/message.jsp" target="_blank">讨论</a></li>
-                <li><a href="../score_test/score_test.jsp" target="_blank">考试</a></li>
+                <li><a href="jiaocai.action" target="_blank">教材</a> </li>
+                <li><a href="../../video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
+                <li><a href="messageQuery.action" target="_blank">讨论</a></li>
+                <li><a href="exam.action" target="_blank">测试</a> </li>
             </ul>
         </div>
         <div class="person fr">
             <p>欢迎你：${sessionScope.studentInfo.studentName}</p>
             <div class="person-hide">
-                <!--<select class="">退出</select>-->
                 <a href="javascript:;">退出</a>
             </div>
         </div>
@@ -90,84 +91,33 @@
         <div class="ppt-show-t">
             <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
                 <ul class="layui-tab-title">
-                    <li class="layui-this">网站设置</li>
-                    <li>用户管理</li>
-                    <li>权限分配</li>
-                    <li>商品管理</li>
-                    <li>订单管理</li>
+                    <s:iterator value="#request.ppts" id="ppt">
+                        <li > <s:property value="#ppt.pptName"/> </li>
+                    </s:iterator>
+                    <%--<li class="layui-this">网站设置</li>--%>
+                    <%--<li>用户管理</li>--%>
+                    <%--<li>权限分配</li>--%>
+                    <%--<li>商品管理</li>--%>
+                    <%--<li>订单管理</li>--%>
                 </ul>
                 <div class="layui-tab-content" style="height: 100px;">
-                    <div class="layui-tab-item layui-show">
-                        <div class="ppt-show-t-container">
-                            <div id="layer-photos-demo" class="layer-photos-demo list">
-                                <img layer-pid="lkmmgmg" layer-src="../../images/video/1.jpg"
-                                     src="../../images/video/1.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/course_sourse/banner/2.jpg"
-                                     src="../../images/course_sourse/banner/2.jpg" alt="图片名">
-                                <img layer-pid="lkmmgmg" layer-src="../../images/video/3.jpg"
-                                     src="../../images/video/3.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/video/4.jpg"
-                                     src="../../images/video/4.jpg" alt="图片信息">
-                                <img layer-pid="lkmmgmg" layer-src="../../images/video/3.jpg"
-                                     src="../../images/video/3.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/video/4.jpg"
-                                     src="../../images/video/4.jpg" alt="图片信息">
-                                <img class="img-size" layer-pid="lkmmgmg" layer-src="../../images/video/1.jpg"
-                                     src="../../images/video/1.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/course_sourse/banner/2.jpg"
-                                     src="../../images/course_sourse/banner/2.jpg" alt="图片名">
-                                <img layer-pid="lkmmgmg" layer-src="../../images/video/3.jpg"
-                                     src="../../images/video/3.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/video/4.jpg"
-                                     src="../../images/video/4.jpg" alt="图片信息">
-                                <img layer-pid="lkmmgmg" layer-src="../../images/video/3.jpg"
-                                     src="../../images/video/3.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/video/4.jpg"
-                                     src="../../images/video/4.jpg" alt="图片信息">
-                                <img layer-pid="lkmmgmg" layer-src="../../images/video/3.jpg"
-                                     src="../../images/video/3.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/video/4.jpg"
-                                     src="../../images/video/4.jpg" alt="图片信息">
-                                <img class="img-size" layer-pid="lkmmgmg" layer-src="../../images/video/1.jpg"
-                                     src="../../images/video/1.jpg" alt="图片信息">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="layui-tab-item">
-                        <div class="ppt-show-t-container">
-                            <div id="" class="layer-photos-demo list">
-                                <img layer-pid="lkmmgmg" layer-src="../../images/video/1.jpg"
-                                     src="../../images/video/1.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/course_sourse/banner/2.jpg"
-                                     src="../../images/course_sourse/banner/2.jpg" alt="图片名">
-                                <img layer-pid="lkmmgmg" layer-src="../../images/video/3.jpg"
-                                     src="../../images/video/3.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/video/4.jpg"
-                                     src="../../images/video/4.jpg" alt="图片信息">
-                                <img layer-pid="lkmmgmg" layer-src="../../images/video/3.jpg"
-                                     src="../../images/video/3.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/video/4.jpg"
-                                     src="../../images/video/4.jpg" alt="图片信息">
-                                <img class="img-size" layer-pid="lkmmgmg" layer-src="../../images/video/1.jpg"
-                                     src="../../images/video/1.jpg" alt="图片信息">
-                                <img layer-pid="图片id，可以不写" layer-src="../../images/course_sourse/banner/2.jpg"
-                                     src="../../images/course_sourse/banner/2.jpg" alt="图片名">
-                                <img layer-pid="lkmmgmg" layer-src="../../images/video/3.jpg"
-                                     src="../../images/video/3.jpg" alt="图片信息">
-                                <div class="download">
-                                    <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius down">下载课件</button>
+                    <s:iterator value="#request.ppts" id="ppt1">
+                        <div class="layui-tab-item ">
+                            <div class="ppt-show-t-container">
+                                <div  class="layer-photos-demo list">
+                                    <s:iterator value="#request.pptUrls" id="pptUrl">
+                                        <s:if test="#pptUrl.pptId == #ppt1.pptId">
+                                            <img layer-pid="lkmmgmg" layer-src="<s:property value='#pptUrl.pptUrl'/>"
+                                                 src="<s:property value='#pptUrl.pptUrl'/>" alt="图片信息">
+                                        </s:if>
+                                    </s:iterator>
+                                    <div class="download">
+                                        <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius down">下载课件</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="layui-tab-item">内容4
-                        <div class="download">
-                            <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius down">下载课件</button>
-                        </div>
-                    </div>
-                    <div class="layui-tab-item">内容5</div>
-                    <div class="layui-tab-item">内容5</div>
-
+                    </s:iterator>
                 </div>
             </div>
         </div>
@@ -183,77 +133,7 @@
                 })
             });
         </script>
-        <!--<div class="ppt-show-l">-->
-        <!--<ul class="layui-nav layui-nav-tree" lay-filter="demo">-->
-        <!--<li class="layui-nav-item layui-nav-itemed">-->
-        <!--<a href="javascript:;">第一二章</a>-->
-        <!--<dl class="layui-nav-child">-->
-        <!--<dd><a href="javascript:;">chp-1</a></dd>-->
-        <!--<dd><a href="javascript:;">chp2-1</a></dd>-->
-        <!--<dd><a href="javascript:;">chp2-2</a></dd>-->
-        <!--</dl>-->
-        <!--</li>-->
-        <!--<li class="layui-nav-item">-->
-        <!--<a href="javascript:;">第三章</a>-->
-        <!--&lt;!&ndash;<span class="layui-nav-more"></span>&ndash;&gt;-->
-        <!--<dl class="layui-nav-child">-->
-        <!--<dd><a href="">chp3-1</a></dd>-->
-        <!--<dd><a href="">chp3-2</a></dd>-->
-        <!--<dd><a href="">chp3-3</a></dd>-->
-        <!--</dl>-->
-        <!--</li>     <li class="layui-nav-item">-->
-        <!--<a href="javascript:;">第四五六章</a>-->
-        <!--&lt;!&ndash;<span class="layui-nav-more"></span>&ndash;&gt;-->
-        <!--<dl class="layui-nav-child">-->
-        <!--<dd><a href="">chp4</a></dd>-->
-        <!--<dd><a href="">chp5</a></dd>-->
-        <!--<dd><a href="">chp6</a></dd>-->
-        <!--</dl>-->
-        <!--</li>-->
-        <!--<li class="layui-nav-item">-->
-        <!--<a href="javascript:;">第七章</a>-->
-        <!--&lt;!&ndash;<span class="layui-nav-more"></span>&ndash;&gt;-->
-        <!--<dl class="layui-nav-child">-->
-        <!--<dd><a href="">chp7-1</a></dd>-->
-        <!--<dd><a href="">chp7-2</a></dd>-->
-        <!--<dd><a href="">chp7-3</a></dd>-->
-        <!--</dl>-->
-        <!--</li>-->
 
-        <!--<li class="layui-nav-item">-->
-        <!--<a href="javascript:;">第八九十章</a>-->
-        <!--&lt;!&ndash;<span class="layui-nav-more"></span>&ndash;&gt;-->
-        <!--<dl class="layui-nav-child">-->
-        <!--<dd><a href="">chp</a></dd>-->
-        <!--<dd><a href="">chp9</a></dd>-->
-        <!--<dd><a href="">chp10</a></dd>-->
-        <!--</dl>-->
-        <!--</li>-->
-        <!--<li class="layui-nav-item">-->
-        <!--<a href="javascript:;">第十至十三章</a>-->
-        <!--&lt;!&ndash;<span class="layui-nav-more"></span>&ndash;&gt;-->
-        <!--<dl class="layui-nav-child">-->
-        <!--<dd><a href="">chp10</a></dd>-->
-        <!--<dd><a href="">chp11</a></dd>-->
-        <!--<dd><a href="">chp12</a></dd>-->
-        <!--<dd><a href="">chp13</a></dd>-->
-        <!--</dl>-->
-        <!--</li>-->
-        <!--<li class="layui-nav-item">-->
-        <!--<a href="javascript:;">第十四至十七章</a>-->
-        <!--&lt;!&ndash;<span class="layui-nav-more"></span>&ndash;&gt;-->
-        <!--<dl class="layui-nav-child">-->
-        <!--<dd><a href="">chp14</a></dd>-->
-        <!--<dd><a href="">chp15</a></dd>-->
-        <!--<dd><a href="">chp16</a></dd>-->
-        <!--<dd><a href="">chp17</a></dd>-->
-        <!--</dl>-->
-        <!--</li>-->
-        <!--</ul>-->
-        <!--</div>-->
-        <!--<div class="ppt-show-r">-->
-
-        <!--</div>-->
     </div>
 </div>
 <script type="text/javascript">
@@ -322,6 +202,9 @@
         "delay": 1000,
         "verticalAlign": "top"
     });
+</script>
+<script type="text/javascript">
+    $(".layui-tab-item:first").addClass("layui-show");
 </script>
 <div class="copyright-wrap">
     <div class="copyright">

@@ -26,7 +26,6 @@ import com.tjnu.service.SubjectServiceImpl;
 public class SubmitExamAction extends ActionSupport{
 	private List<Integer> subjectID;//学生考试的题目
 	private SubjectService subjectService = new SubjectServiceImpl();
-	private StudentService studentService = new StudentServiceImpl();
 	private ExamService examService=new ExamServiceImpl();
 	public List<Integer> getSubjectID() {
 		return subjectID;

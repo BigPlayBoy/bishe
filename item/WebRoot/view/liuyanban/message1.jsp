@@ -1,5 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: 11517
+  Date: 2017/3/19
+  Time: 22:39
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>讨论区</title>
@@ -19,74 +26,7 @@
     <script type="text/javascript" src="../../public/js/liuyanban_js/quake.slider-min.js"></script>
     <style type="text/css">
     </style>
-<script type="text/javascript">
-    layui.use(['laypage', 'layer'], function(){
-        var laypage = layui.laypage
-            ,layer = layui.layer;
 
-        laypage({
-            cont: 'pages'
-            ,pages: 100 //总页数
-            ,groups: 6 //连续显示分页数
-            ,skin:'#F7B824'
-        });
-        //将一段数组分页展示
-
-        //测试数据
-        var data = [
-            '北京',
-            '上海',
-            '广州',
-            '深圳',
-            '杭州',
-            '长沙',
-            '合肥',
-            '宁夏',
-            '成都',
-            '西安',
-            '南昌',
-            '上饶',
-            '沈阳',
-            '济南',
-            '厦门',
-            '福州',
-            '九江',
-            '宜春',
-            '赣州',
-            '宁波',
-            '绍兴',
-            '无锡',
-            '苏州',
-            '徐州',
-            '东莞',
-            '佛山',
-            '中山',
-            '成都',
-            '武汉',
-            '青岛',
-            '天津',
-            '重庆',
-            '南京',
-            '九江',
-            '香港',
-            '澳门',
-            '台北'
-        ];
-
-        var nums = 5; //每页出现的数据量
-
-        //模拟渲染
-        var render = function(curr){
-            //此处只是演示，实际场景通常是返回已经当前页已经分组好的数据
-            var str = '', last = curr*nums - 1;
-            last = last >= data.length ? (data.length-1) : last;
-            for(var i = (curr*nums - nums); i <= last; i++){
-                str += '<li>'+ data[i] +'</li>';
-            }
-            return str;
-        };
-    });
-</script>
 </head>
 <body>
 <div id="header">
@@ -117,10 +57,17 @@
     var $person=$("#header .header-content .person");
     var $personhide=$("#header .header-content .person .person-hide");
     $person.click(function () {
+//        alert("你好！");
         $personhide.css("display","block");
     })
 </script>
-
+<!--<script type="text/javascript">-->
+<!--var $mtln=$(".message .m-t .m-t-left ul li");-->
+<!--$mtln.click(function () {-->
+<!--//        var a=$(this).size();-->
+<!--alert("ggggg");-->
+<!--});-->
+<!--</script>-->
 <div class="person-info">
     <div class="p-i-size"><span class="fl">现在是:</span><span class="time1 fl"></span>
     </div>

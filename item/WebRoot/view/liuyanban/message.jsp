@@ -13,13 +13,14 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
 %>
-
 <base href="<%=basePath%>">
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>留言</title>
+    <title>讨论区</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/icon.ico" media="screen"/>
     <link type="text/css" rel="stylesheet" href="../../public/css/message_css/liuyan-css.css">
+    <link type="text/css" rel="stylesheet" href="../../public/css/public2.css">
     <link type="text/css" rel="stylesheet" href="../../public/css/reset.css">
     <link type="text/css" rel="stylesheet" href="../../public/css/public.css">
     <!--<link type="text/css" rel="stylesheet" href="../liuyanban/css/demo.css">-->
@@ -27,67 +28,12 @@
     <link type="text/css" rel="stylesheet" href="../../public/css/message_css/quake.slider.css">
     <link type="text/css" rel="stylesheet" href="../../public/layui/css/layui.css" media="all">
     <script type="text/javascript" src="../../public/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../public/js/public_js.js"></script>
     <script type="text/javascript" src="../../public/js/liuyanban_js/liuyan-js.js"></script>
     <script type="text/javascript" src="../../public/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="../../public/js/shoucang.js"></script>
     <script type="text/javascript" src="../../public/js/liuyanban_js/quake.slider-min.js"></script>
     <style type="text/css">
     </style>
-    <script type="text/javascript">
-        layui.use(['laypage', 'layer'], function(){
-            var laypage = layui.laypage
-                    ,layer = layui.layer;
-
-            laypage({
-                cont: 'pages'
-                ,pages: 100 //总页数
-                ,groups: 6 //连续显示分页数
-                ,skin:'#F7B824'
-            });
-            //将一段数组分页展示
-
-            //测试数据
-            var data = [
-                '北京',
-                '上海',
-                '广州',
-                '深圳',
-                '杭州',
-                '长沙',
-                '合肥',
-                '宁夏',
-                '成都',
-                '西安',
-                '南昌',
-                '上饶',
-                '沈阳',
-                '济南',
-                '厦门',
-                '福州',
-                '九江',
-                '宜春',
-                '赣州',
-                '宁波',
-                '绍兴',
-                '无锡',
-                '苏州'
-            ];
-
-            var nums = 5; //每页出现的数据量
-
-            //模拟渲染
-            var render = function(curr){
-                //此处只是演示，实际场景通常是返回已经当前页已经分组好的数据
-                var str = '', last = curr*nums - 1;
-                last = last >= data.length ? (data.length-1) : last;
-                for(var i = (curr*nums - nums); i <= last; i++){
-                    str += '<li>'+ data[i] +'</li>';
-                }
-                return str;
-            };
-        });
-    </script>
-
     <s:if test="#request.isFirst==1">
         <script type="text/javascript">
             $(document).ready(function () {
@@ -102,7 +48,6 @@
             });
         </script>
     </s:if>
-
 </head>
 <body>
 <div id="header">
@@ -114,9 +59,10 @@
         <div class="nav fl">
             <ul>
                 <li><a href="../../index.jsp" target="_blank">首页</a></li>
-                <li><a href="#">课程</a></li>
-                <li><a href="#">资源</a></li>
-                <li><a href="messageQuery.action">讨论</a></li>
+                <li><a href="jiaocai.action" target="_blank">教材</a> </li>
+                <li><a href="../../video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
+                <li><a href="messageQuery.action" target="_blank">讨论</a></li>
+                <li><a href="exam.action" target="_blank">测试</a> </li>
             </ul>
         </div>
         <div class="login fr">
@@ -138,17 +84,12 @@
                 }
                 <%--alert("${sessionScope.studentInfo.studentId}    :::"+user);--%>
             </script>
-            <%--<s:if test="#request.messageBoards">--%>
-                <%--<script type="text/javascript">--%>
-                    <%--alert("这里是测试！");--%>
-                <%--</script>--%>
-            <%--</s:if>--%>
         </div>
     </div>
 </div>
 
 <div class="person-info">
-    <div class="p-i-size"><span class="fl">欢迎你：admin</span><span class="fl">现在是:</span><span class="time1 fl"></span>
+    <div class="p-i-size"><span class="fl">现在是:</span><span class="time1 fl"></span>
     </div>
 </div>
 
