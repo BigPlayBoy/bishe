@@ -9,5 +9,7 @@
 		</id>
 		<property name="pptName"/><!-- 映射Theme属性 -->
 		<property name="pptDetail"/><!-- 映射Theme属性 -->
+		<property name="pptSourceUrl"/><!-- 映射Theme属性 -->
+
 	</class>
 </hibernate-mapping>

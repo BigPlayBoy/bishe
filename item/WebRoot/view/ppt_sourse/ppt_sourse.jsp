@@ -106,9 +106,9 @@
                                                  src="<s:property value='#pptUrl.pptUrl'/>" alt="图片信息">
                                         </s:if>
                                     </s:iterator>
-                                    <div class="download">
+                                    <a class="download" href="<s:property value="#ppt1.pptSourceUrl"/> ">
                                         <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius down">下载课件</button>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -7,6 +7,7 @@ public class Ppt {
     private int pptId;
     private String pptName;
     private String pptDetail;
+    private String  pptSourceUrl;
 
     @Override
     public String toString() {
@@ -14,7 +15,16 @@ public class Ppt {
                 "pptId=" + pptId +
                 ", pptName='" + pptName + '\'' +
                 ", pptDetail='" + pptDetail + '\'' +
+                ", pptSourceUrl='" + pptSourceUrl + '\'' +
                 '}';
+    }
+
+    public String getPptSourceUrl() {
+        return pptSourceUrl;
+    }
+
+    public void setPptSourceUrl(String pptSourceUrl) {
+        this.pptSourceUrl = pptSourceUrl;
     }
 
     public int getPptId() {
