@@ -78,5 +78,9 @@
 		<action name="close" class="com.tjnu.action.CloseAction">
 			<result name="success" type="redirect">/index.jsp</result><!--跳转到考试页面-->
 		</action>
+		<action name="queryVideo" class="com.tjnu.action.QueryVideoAction">
+			<result name="success" >/view/video_course_sourse/video_course_sourse.jsp</result><!--跳转到考试页面-->
+			<result name="notLogin" type="redirect" >/view/login/login.jsp</result><!--没有登陆，退到登陆界面-->
+		</action>
  	</package>
 </struts>

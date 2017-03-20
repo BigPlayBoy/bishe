@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<s:set name="isFirest" value="yes"/>
 
 <html>
 <head>
@@ -17,11 +18,13 @@
     <link type="text/css" rel="stylesheet" href="../../public/css/public.css">
     <link type="text/css" rel="stylesheet" href="../../public/css/public2.css">
     <link type="text/css" rel="stylesheet" href="../../public/layui/css/modules/layer/default/layer.css">
+    <link type="text/css" rel="stylesheet" href="../../public/layui/css/layui.css">
     <link type="text/css" rel="stylesheet" href="../../public/iconfont/iconfont.css">
     <link type="text/css" rel="stylesheet" href="../../public/css/course_sourse_css/style.css">
     <link type="text/css" rel="stylesheet" href="../../public/css/course_sourse_css/course_sourse.css">
     <script type="text/javascript" src="../../public/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../public/js/public_js.js"></script>
+    <script type="text/javascript" src="../../public/layui/layui.js"></script>
     <script type="text/javascript" src="../../public/layui/lay/modules/layer.js"></script>
     <script type="text/javascript" src="../../public/js/course_sourse_js/a.js"></script>
     <script type="text/javascript" src="../../public/js/course_sourse_js/b.js"></script>
@@ -332,186 +335,368 @@
 
     <div class="c_v_l_content" style="">
         <div class="full-length">
-            <div class="container1 clearfix">
-                <ul>
-                    <li data="../../video/1.mp4">
-                        <div class="port-2 effect-1">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li data="../../video/5.mp4">
-                        <!--data是每个视频的地址-->
-                        <div class="port-2 effect-2">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-2">
-                            </div>
-                            <div class="text-desc">
-                                <h3>第一章</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a class="btn"><span class="triangle"></span> </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li data="../../video/4.mp4">
-                        <div class="port-2 effect-3">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-3">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="port-2 effect-1">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
-                            </div>
-                        </div>
-                    </li>
+            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <s:iterator value="#request.videoList" id="video">
+                        <li><s:property value="#video.videoName"/> </li>
+                    </s:iterator>
                 </ul>
-                <ul>
-                    <li>
-                        <div class="port-2 effect-1">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="port-2 effect-2">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-2">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
+                <div class="layui-tab-content video-list">
+                    <s:iterator value="#request.videoList" id="video">
+                        <div class="layui-tab-item ">
+                            <div class="container1 clearfix">
+                                <s:iterator value="#request.videoSourceList" id="videoSource">
+                                <ul>
+                                    <s:if test="#videoSource.videoId == #video.videoId">
+                                        <li data="<s:property value="#videoSource.videoUrl"/> ">
+                                            <div class="port-2 effect-1">
+                                                <div class="image-box">
+                                                    <img src="<s:property value="#videoSource.videoImgUrl"/> " alt="Image-1">
+                                                </div>
+                                                <div class="text-desc">
+                                                    <h3><s:property value="#videoSource.videoName"/></h3>
+                                                    <p><s:property value="#videoSource.videoDetail"/></p>
+                                                    <a href="#" class="btn"><span class="triangle"></span> </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </s:if>
+                                </ul>
+                                </s:iterator>
                             </div>
                         </div>
-                    </li>
-                    <li>
-                        <div class="port-2 effect-3">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-3">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
-                            </div>
+                    </s:iterator>
+                    <div class="layui-tab-item ">
+                        <div class="container1 clearfix">
+
                         </div>
-                    </li>
-                    <li>
-                        <div class="port-2 effect-1">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
-                            </div>
+                    </div>
+                    <div class="layui-tab-item">
+                        <div class="container1 clearfix">
+                            <ul>
+                                <li data="../../video/1.mp4">
+                                    <div class="port-2 effect-1">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data="../../video/5.mp4">
+                                    <!--data是每个视频的地址-->
+                                    <div class="port-2 effect-2">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-2">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>第一章</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data="../../video/4.mp4">
+                                    <div class="port-2 effect-3">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-3">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-1">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <div class="port-2 effect-1">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-2">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-2">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-3">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-3">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-1">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <div class="port-2 effect-1">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
-                            </div>
+                    </div>
+                    <div class="layui-tab-item">
+                        <div class="container1 clearfix">
+                            <ul>
+                                <li data="../../video/1.mp4">
+                                    <div class="port-2 effect-1">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data="../../video/5.mp4">
+                                    <!--data是每个视频的地址-->
+                                    <div class="port-2 effect-2">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-2">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>第一章</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data="../../video/4.mp4">
+                                    <div class="port-2 effect-3">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-3">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-1">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <div class="port-2 effect-1">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-2">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-2">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-3">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-3">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-1">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <div class="port-2 effect-1">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-2">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-2">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-3">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-3">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="port-2 effect-1">
+                                        <div class="image-box">
+                                            <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
+                                        </div>
+                                        <div class="text-desc">
+                                            <h3>Your Title</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor
+                                                incididunt
+                                                ut labore et dolore magna aliqua.</p>
+                                            <a href="#" class="btn"><span class="triangle"></span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </li>
-                    <li>
-                        <div class="port-2 effect-2">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-2">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="port-2 effect-3">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-3">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="port-2 effect-1">
-                            <div class="image-box">
-                                <img src="../../images/course_sourse/img-2.jpg" alt="Image-1">
-                            </div>
-                            <div class="text-desc">
-                                <h3>Your Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn"><span class="triangle"></span> </a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="copyright-wrap">
     <div class="copyright">
         <div class="co-left">
@@ -546,8 +731,8 @@
 //        var $surl='../../video/5.mp4';
         var $surl = $(this).parent().parent().parent().attr("data");
 //        var $soursetitle='你好';
-        var $soursetitle=$(this).parent().parent().find('h3').html();
-        var vcontent='<div class="vcontainer"> <video controls="controls" class="vstyle"> <source src="'+$surl+'" type="video/mp4">您的浏览器不支持video标签。 </video> </div>';
+        var $soursetitle = $(this).parent().parent().find('h3').html();
+        var vcontent = '<div class="vcontainer"> <video controls="controls" class="vstyle"> <source src="' + $surl + '" type="video/mp4">您的浏览器不支持video标签。 </video> </div>';
 
 //        var index = layer.open({
 //            type: 2,
@@ -581,15 +766,61 @@
 //            content: ''
 //        });
             type: 1 //Page层类型
-            ,area: ['1013px', '656px']
-            ,title: $soursetitle
-            ,shade: [0.6,'#000'] //遮罩透明度
-            ,maxmin: false //允许全屏最小化
-            ,fixed:true
-            ,anim: 0 //0-6的动画形式，-1不开启
-            ,content: vcontent
+            , area: ['1013px', '656px']
+            , title: $soursetitle
+            , shade: [0.6, '#000'] //遮罩透明度
+            , maxmin: false //允许全屏最小化
+            , fixed: true
+            , anim: 0 //0-6的动画形式，-1不开启
+            , content: vcontent
         });
     });
+</script>
+<script>
+    layui.use('element', function () {
+        var $ = layui.jquery
+            , element = layui.element(); //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+        //触发事件
+        var active = {
+            tabAdd: function () {
+                //新增一个Tab项
+                element.tabAdd('demo', {
+                    title: '新选项' + (Math.random() * 1000 | 0) //用于演示
+                    , content: '内容' + (Math.random() * 1000 | 0)
+                    , id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+                })
+            }
+            , tabDelete: function (othis) {
+                //删除指定Tab项
+                element.tabDelete('demo', '44'); //删除：“商品管理”
+
+
+                othis.addClass('layui-btn-disabled');
+            }
+            , tabChange: function () {
+                //切换到指定Tab项
+                element.tabChange('demo', '22'); //切换到：用户管理
+            }
+        };
+
+        $('.site-demo-active').on('click', function () {
+            var othis = $(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+        });
+
+        //Hash地址的定位
+        var layid = location.hash.replace(/^#test=/, '');
+        element.tabChange('test', layid);
+
+        element.on('tab(test)', function (elem) {
+            location.hash = 'test=' + $(this).attr('lay-id');
+        });
+
+    });
+</script>
+<script type="text/javascript">
+    $(".layui-tab-item:first").addClass("layui-show");
 </script>
 </body>
 </html>

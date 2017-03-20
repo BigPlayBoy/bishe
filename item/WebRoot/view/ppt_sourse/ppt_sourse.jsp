@@ -94,11 +94,6 @@
                     <s:iterator value="#request.ppts" id="ppt">
                         <li > <s:property value="#ppt.pptName"/> </li>
                     </s:iterator>
-                    <%--<li class="layui-this">网站设置</li>--%>
-                    <%--<li>用户管理</li>--%>
-                    <%--<li>权限分配</li>--%>
-                    <%--<li>商品管理</li>--%>
-                    <%--<li>订单管理</li>--%>
                 </ul>
                 <div class="layui-tab-content" style="height: 100px;">
                     <s:iterator value="#request.ppts" id="ppt1">
@@ -133,7 +128,6 @@
                 })
             });
         </script>
-
     </div>
 </div>
 <script type="text/javascript">
