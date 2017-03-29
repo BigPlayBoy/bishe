@@ -27,8 +27,7 @@
   </head>
 <body>
 <div class="container">
-
-    <nav class="navbar  " role="navigation">
+    <nav class="navbar  navbar-default" role="navigation">
         <div class="container-fluid ">
             <div class="navbar-header ">
                 <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -60,40 +59,58 @@
     </nav>
 
     <%--查询条件开始--%>
-    <div class="Submit">
-        <form action="getsubject.action" >
-            <div class="input-group ">
-                <span>题型：</span>
-                <select name="tixing" class="select">
-                    <option value="0">全部</option>
-                    <option value="1">判断题</option>
-                    <option value="2">单选题</option>
-                    <option value="3">多选题</option>
-                </select>
-                <span>章节：</span>
-                <select name="chapter" class="select">
-                    <option value="0">全部</option>
-                    <option value="1">第一章</option>
-                    <option value="2">第二章</option>
-                    <option value="3">第三章</option>
-                    <option value="4">第四章</option>
-                </select>
-                <span>难易程度</span>
-                <select name="hard" class="select">
-                    <option value="0">全部</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <span>关键字：</span>
-                <input class="form-control" type="text" placeholder="请输入关键字" name="guanjianzi">
-                <button type="submit" class="btn-default "  value="提交">提交</button>
+        <form action="getsubject.action" role="form" >
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group ">
+                        <label class="control-label" for="tixing">题型：</label>
+                        <select id="tixing" name="tixing" class="form-control ">
+                            <option value="0">全部</option>
+                            <option value="1">判断题</option>
+                            <option value="2">单选题</option>
+                            <option value="3">多选题</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>章节：</label>
+                        <select id="chapter" name="chapter" class="form-control">
+                            <option value="0">全部</option>
+                            <option value="1">第一章</option>
+                            <option value="2">第二章</option>
+                            <option value="3">第三章</option>
+                            <option value="4">第四章</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <span>难易程度</span>
+                        <select id="hard" name="hard" class="form-control">
+                            <option value="0">全部</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label" for="guanjianzi" >关键字：</label>
+                        <input id="guanjianzi" class="form-control" type="text" placeholder="请输入关键字" name="guanjianzi">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label" for="tijiao" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <button type="submit" class="btn btn-default " id="tijiao" value="提交">提交</button>
+                    </div>
+                </div>
             </div>
-
         </form>
-    </div>
     <%--查询条件结束--%>
 </div>
 <div class="container">
@@ -103,7 +120,7 @@
             <div class=" alert-success "><s:actionmessage/></div>
         </div>
     </div>
-    <table class="table table-responsive table-bordered ">
+    <table class="table table-responsive table-bordered table-hover " style="table-layout:fixed; ">
         <thead>
         <tr>
             <th>编号</th>
@@ -116,12 +133,12 @@
             <th>删除</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="">
         <s:if test="#request.subjects!=null">
             <s:iterator value="#request.subjects" id="subject">
                 <tr>
                     <td><s:property value="#subject.subjectId"/> </td>
-                    <td><s:property value="#subject.subjectContent"/> </td>
+                    <td style="overflow: hidden; text-overflow: ellipsis; white-space:nowrap; "><s:property value="#subject.subjectContent"/>  </td>
                     <td><s:property value="#subject.subjectType"/> </td>
                     <td><s:property value="#subject.subjectChapter"/> </td>
                     <td><s:property value="#subject.subjectGrade"/> </td>

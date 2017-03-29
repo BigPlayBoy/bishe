@@ -2,6 +2,8 @@ package com.tjnu.service;
 
 import java.util.List;
 
+import com.tjnu.DataBase.Jduge;
+import com.tjnu.DataBase.Select;
 import com.tjnu.DataBase.Subject;
 import com.tjnu.util.Page;
 import com.tjnu.util.PageResult;
@@ -15,6 +17,8 @@ public interface SubjectService {
 
 	// 查看试题详细信息
 	 Subject showSubjectParticular(int subjectID);
+    // 查看试题详细信息
+    Select showSelectParticular(int selectId);
 	// 更新试题信息
 	 void updateSubject(Subject subject);
 	// 删除试题信息
@@ -25,7 +29,7 @@ public interface SubjectService {
 	 List<Subject> randomFindSubject(int number);
 
 	//随机查询试题记录
-	List<Subject> randomFindSelect(int number);
+	List<Select> randomFindSelect(int number);
 
 	//计算学生得分
 	 int accountResult(List<Integer> subjectIDs,List<String> studentAnswers);

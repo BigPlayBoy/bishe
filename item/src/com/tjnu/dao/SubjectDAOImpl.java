@@ -1,6 +1,7 @@
 package com.tjnu.dao;
 
 import java.util.List;
+import java.util.Random;
 
 import com.tjnu.DataBase.Jduge;
 import com.tjnu.DataBase.Select;
@@ -120,6 +121,12 @@ public class SubjectDAOImpl implements SubjectDAO{
 		HibernateSessionFactory.closeSession();		//关闭Session对象
 		return subject;
 	}
+    public Select findSelectByID(int selectId) {
+        Session session = HibernateSessionFactory.getSession();//获得Session对象
+        Select select = (Select) session.get(Select.class, selectId);
+        HibernateSessionFactory.closeSession();		//关闭Session对象
+        return select;
+    }
 
 	@Override
 	public List<Subject> likeQueryByTitle(String subjectTitle, Page page) {
@@ -167,8 +174,9 @@ public class SubjectDAOImpl implements SubjectDAO{
 
 	public List<Subject> randomFindSubject(int number) {
 		Session session = HibernateSessionFactory.getSession();//获得Session对象
-		Query query = session.createQuery("from Subject as sub order by rand(?)");
-		query.setInteger(0,number);
+		Query query = session.createQuery("from Subject as sub order by rand()");
+//        Random random=new Random();
+//        query.setInteger(0,random.nextInt(number));
 		query.setMaxResults(number);//设置查询记录数
 		List list = query.list();					//查询结果保存到list中
 		HibernateSessionFactory.closeSession();//关闭Session对象
@@ -178,8 +186,9 @@ public class SubjectDAOImpl implements SubjectDAO{
 	@Override
 	public List<Subject> randomFindJduge(int number) {
 		Session session = HibernateSessionFactory.getSession();//获得Session对象
-		Query query = session.createQuery("from Jduge  order by rand(?)");
-		query.setInteger(0,number);
+		Query query = session.createQuery("from Jduge  order by rand()");
+//        Random random=new Random();
+//		query.setInteger(0,random.nextInt());
 		query.setMaxResults(number);//设置查询记录数
 		List list = query.list();					//查询结果保存到list中
 		HibernateSessionFactory.closeSession();//关闭Session对象
@@ -187,10 +196,11 @@ public class SubjectDAOImpl implements SubjectDAO{
 	}
 
 	@Override
-	public List<Subject> randomFindSelect(int number) {
+	public List<Select> randomFindSelect(int number) {
 		Session session = HibernateSessionFactory.getSession();//获得Session对象
-		Query query = session.createQuery("from Select  order by rand(?)");
-		query.setInteger(0,number);
+		Query query = session.createQuery("from Select  order by rand()");
+//        Random random=new Random();
+//        query.setInteger(0,random.nextInt());
 		query.setMaxResults(number);//设置查询记录数
 		List list = query.list();					//查询结果保存到list中
 		HibernateSessionFactory.closeSession();//关闭Session对象
@@ -200,8 +210,8 @@ public class SubjectDAOImpl implements SubjectDAO{
 	@Override
 	public List<Subject> randomFindSelects(int number) {
 		Session session = HibernateSessionFactory.getSession();//获得Session对象
-		Query query = session.createQuery("from Selects  order by rand(?)");
-		query.setInteger(0,number);
+		Query query = session.createQuery("from Selects  order by rand()");
+//		query.setInteger(0,number);
 		query.setMaxResults(number);//设置查询记录数
 		List list = query.list();					//查询结果保存到list中
 		HibernateSessionFactory.closeSession();//关闭Session对象

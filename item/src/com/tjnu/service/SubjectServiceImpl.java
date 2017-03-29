@@ -2,6 +2,8 @@ package com.tjnu.service;
 
 import java.util.List;
 
+import com.tjnu.DataBase.Jduge;
+import com.tjnu.DataBase.Select;
 import com.tjnu.dao.SubjectDAO;
 import com.tjnu.dao.SubjectDAOImpl;
 import com.tjnu.DataBase.Subject;
@@ -46,7 +48,9 @@ public class SubjectServiceImpl implements SubjectService{
 	public Subject showSubjectParticular(int subjectID) {
 		return subjectDAO.findSubjectByID(subjectID);
 	}
-
+    public Select showSelectParticular(int selectId) {
+        return subjectDAO.findSelectByID(selectId);
+    }
 	public void updateSubject(Subject subject) {
 		subjectDAO.updateSubject(subject);
 	}
@@ -71,7 +75,7 @@ public class SubjectServiceImpl implements SubjectService{
 		return subjectDAO.randomFindJduge(number);
 	}
 
-	public List<Subject> randomFindSelect(int number) {
+	public List<Select> randomFindSelect(int number) {
 		return subjectDAO.randomFindSelect(number);
 	}
 
@@ -85,7 +89,8 @@ public class SubjectServiceImpl implements SubjectService{
 		for(int i = 0; i < subjectIDs.size(); i++) {
 			String rightAnswer = subjectDAO.
 				getSelect(subjectIDs.get(i)).getSelectAnswer();//得到正确答案，通过试题ID
-			if(rightAnswer.equals(studentAnswers.get(i))) {
+            System.out.println("正确答案是："+rightAnswer+"我选择的答案是"+studentAnswers.get(i));
+            if(rightAnswer.equals(studentAnswers.get(i))) {
 				GeneralPoint += 5;//加5分
 			}
 		}

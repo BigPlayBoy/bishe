@@ -148,16 +148,16 @@
                                 <td colspan="3"><strong>第<span class="STYLE5">${sta.index + 1}</span>题&nbsp;${subject.subjectContent}</strong>		</td>
                             </tr>
                             <tr>
-                                <td colspan="3"><strong>A．</strong>${subject.subjectA}</td>
+                                <td colspan="3"><strong>A．</strong>${subject.selectA}</td>
                             </tr>
                             <tr>
-                                <td colspan="3"><strong>B．</strong>${subject.subjectB}</td>
+                                <td colspan="3"><strong>B．</strong>${subject.selectB}</td>
                             </tr>
                             <tr>
-                                <td colspan="3"><strong>C．</strong>${subject.subjectC}</td>
+                                <td colspan="3"><strong>C．</strong>${subject.selectC}</td>
                             </tr>
                             <tr>
-                                <td colspan="3"><strong>D．</strong>${subject.subjectD}</td>
+                                <td colspan="3"><strong>D．</strong>${subject.selectD}</td>
                             </tr>
                             <tr>
                                 <td height="32" colspan="3" bgcolor="#CCCCCC">选择答案：

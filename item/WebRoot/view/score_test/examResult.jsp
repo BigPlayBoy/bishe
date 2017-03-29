@@ -123,7 +123,7 @@
             <a class="logo1"><img src="../../images/course_sourse/banner/logo5.png"> </a>
         </div>
     </div>
-    <div class="t-c-list">
+    <div class="t-c-list" >
         <table width="1003" height="500" border="0" cellpadding="0" cellspacing="0" class="centerbg">
             <tr>
                 <td width="149" height="48">&nbsp;</td>

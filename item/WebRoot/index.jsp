@@ -42,6 +42,7 @@
                 <li><a href="queryVideo.action" target="_blank">视频</a></li>
                 <li><a href="messageQuery.action" target="_blank">讨论</a></li>
                 <li><a href="exam.action" target="_blank">测试</a> </li>
+                <li><a href="login.jsp" target="_blank">教师登陆</a> </li>
             </ul>
         </div>
         <div class="login fr">

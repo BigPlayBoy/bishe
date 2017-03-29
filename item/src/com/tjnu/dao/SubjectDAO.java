@@ -14,12 +14,14 @@ public interface SubjectDAO {
 	List<Subject> findSubjectSelectByPage(String tixing,String chapter,String hard,String guanjianzi,Page page);//分页查询试题
 
 	Subject findSubjectByID(int subjectID);//根据试题ID查找试题
-	 List<Subject> likeQueryByTitle(String subjectTitle,Page page);//根据试题标题模糊查询试题
+    Select findSelectByID(int selectId);//根据试题ID查找试题
+
+    List<Subject> likeQueryByTitle(String subjectTitle,Page page);//根据试题标题模糊查询试题
 	 int findLinkQueryCount(String subjectTitle);//查询模糊记录数
 
 	 List<Subject> randomFindSubject(int number);//随时取出记录
 	List<Subject> randomFindJduge(int number);//随时取出记录
-	List<Subject> randomFindSelect(int number);//随时取出记录
+	List<Select> randomFindSelect(int number);//随时取出记录
 	List<Subject> randomFindSelects(int number);//随时取出记录
 
 	/*增加题目

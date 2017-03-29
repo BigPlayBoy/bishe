@@ -87,11 +87,7 @@
 	                            <td height="35" colspan="2" class="top_hui_text"><input class="editbox4" type="password" size="20" name="password">
 	                              <img src="teacher/images/luck.gif" width="19" height="18"> </td>
 	                          </tr>
-	                          <tr>
-	                            <td width="14%" height="35" ><span class="login_txt">登录角色：</span></td>
-	                            <td height="35" colspan="2" class="login_txt"><input type="radio" name="role" value="teacher" >教师
-	                                <input type="radio" name="role" value="student" checked="checked">学生</td>
-	                          </tr>
+
 	                          <tr>
 	                            <td height="35" >&nbsp;</td>
 	                            <td width="19%" height="35" ><input name="Submit" type="submit" class="button" id="Submit" value="登 录"> </td>
