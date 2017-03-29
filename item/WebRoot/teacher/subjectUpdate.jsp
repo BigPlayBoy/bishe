@@ -47,7 +47,7 @@
 				  <tr>
 					<td>试题题目:</td>
 					<td>
-						<input name="subjectID" type="hidden" value="${subject.subjectID}">
+						<input name="subjectId" type="hidden" value="${subject.subjectId}">
 						<input name="subjectTitle" type="text" size="80"  value="${subject.subjectTitle}">
 					</td>
 				  </tr>
@@ -70,14 +70,14 @@
 				   <tr>
 					<td>答案:</td>
 					<td>
-						<input name="subjectAnswer" type="radio" value="A" 
-							${subject.subjectAnswer == "A" ? "checked" : ""}>A
-						<input name="subjectAnswer" type="radio" value="B"
-							${subject.subjectAnswer == "B" ? "checked" : ""}>B
-						<input name="subjectAnswer" type="radio" value="C"
-							${subject.subjectAnswer == "C" ? "checked" : ""}>C
-						<input name="subjectAnswer" type="radio" value="D"
-							${subject.subjectAnswer == "D" ? "checked" : ""}>D
+						<input name="jdugeAnswer" type="radio" value="A"
+							${subject.jdugeAnswer == "A" ? "checked" : ""}>A
+						<input name="jdugeAnswer" type="radio" value="B"
+							${subject.jdugeAnswer == "B" ? "checked" : ""}>B
+						<input name="jdugeAnswer" type="radio" value="C"
+							${subject.jdugeAnswer == "C" ? "checked" : ""}>C
+						<input name="jdugeAnswer" type="radio" value="D"
+							${subject.jdugeAnswer == "D" ? "checked" : ""}>D
 					</td>
 				  </tr>
 				  <tr>

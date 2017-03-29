@@ -86,17 +86,17 @@
         <div class="nav fl">
             <ul>
                 <li><a href="../../index.jsp" target="_blank">首页</a></li>
-                <li><a href="../ppt_sourse/ppt_sourse.jsp" target="_blank">教材</a></li>
-                <li><a href="../video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
-                <li><a href="../liuyanban/message.jsp" target="_blank">讨论</a></li>
-                <li><a href="#">考试</a></li>
+                <li><a href="jiaocai.action" target="_blank">教材</a> </li>
+                <li><a href="queryVideo.action" target="_blank">视频</a></li>
+                <li><a href="messageQuery.action" target="_blank">讨论</a></li>
+                <li><a href="exam.action" target="_blank">测试</a> </li>
             </ul>
         </div>
         <div class="person fr">
             <p>欢迎你：${sessionScope.studentInfo.studentName}</p>
             <div class="person-hide">
                 <!--<select class="">退出</select>-->
-                <a href="javascript:;">退出</a>
+                <a href="close.action">退出</a>
             </div>
         </div>
     </div>
@@ -161,7 +161,7 @@
                             </tr>
                             <tr>
                                 <td height="32" colspan="3" bgcolor="#CCCCCC">
-                                    <strong>【正确答案】：${subject2.subjectAnswer}</strong><br/>
+                                    <strong>【正确答案】：${subject2.jdugeAnswer}</strong><br/>
                                     <strong>【参考解析】：${subject2.subjectParse}</strong></tr>
                         </s:iterator>
                         <!--题目结束-->

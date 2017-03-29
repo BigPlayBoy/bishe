@@ -10,7 +10,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.tjnu.po.Subject;
+import com.tjnu.DataBase.Subject;
 import com.tjnu.service.SubjectService;
 import com.tjnu.service.SubjectServiceImpl;
 

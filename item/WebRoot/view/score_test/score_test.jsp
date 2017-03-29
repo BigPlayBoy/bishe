@@ -87,7 +87,7 @@
             <ul>
                 <li><a href="../../index.jsp" target="_blank">首页</a></li>
                 <li><a href="jiaocai.action" target="_blank">教材</a> </li>
-                <li><a href="../../video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
+                <li><a href="queryVideo.action" target="_blank">视频</a></li>
                 <li><a href="messageQuery.action" target="_blank">讨论</a></li>
                 <li><a href="exam.action" target="_blank">测试</a> </li>
             </ul>
@@ -96,7 +96,7 @@
             <p>欢迎你：${sessionScope.studentInfo.studentName}</p>
             <div class="person-hide">
                 <!--<select class="">退出</select>-->
-                <a href="javascript:;">退出</a>
+                <a href="close.action">退出</a>
             </div>
         </div>
     </div>
@@ -105,11 +105,8 @@
     var $person=$("#header .header-content .person");
     var $personhide=$("#header .header-content .person .person-hide");
     $person.hover(function () {
-//        alert("你好！");
-//        $personhide.css("display","block");
         $personhide.slideDown(500);
     },function () {
-//        $personhide.css("display","none");
         $personhide.slideUp(500);
     })
 </script>
@@ -147,30 +144,30 @@
 
                             <s:iterator value="#request.subjects" var="subject" status="sta">
                             <tr>
-                                <input type="hidden" name="subjectID" value="${subject.subjectID}"/>
-                                <td colspan="3"><strong>第<span class="STYLE5">${sta.index + 1}</span>题&nbsp;${subject.subjectTitle}</strong>		</td>
+                                <input type="hidden" name="subjectId" value="${subject.subjectId}"/>
+                                <td colspan="3"><strong>第<span class="STYLE5">${sta.index + 1}</span>题&nbsp;${subject.subjectContent}</strong>		</td>
                             </tr>
                             <tr>
-                                <td colspan="3"><strong>A．</strong>${subject.subjectOptionA}</td>
+                                <td colspan="3"><strong>A．</strong>${subject.subjectA}</td>
                             </tr>
                             <tr>
-                                <td colspan="3"><strong>B．</strong>${subject.subjectOptionB}</td>
+                                <td colspan="3"><strong>B．</strong>${subject.subjectB}</td>
                             </tr>
                             <tr>
-                                <td colspan="3"><strong>C．</strong>${subject.subjectOptionC}</td>
+                                <td colspan="3"><strong>C．</strong>${subject.subjectC}</td>
                             </tr>
                             <tr>
-                                <td colspan="3"><strong>D．</strong>${subject.subjectOptionD}</td>
+                                <td colspan="3"><strong>D．</strong>${subject.subjectD}</td>
                             </tr>
                             <tr>
                                 <td height="32" colspan="3" bgcolor="#CCCCCC">选择答案：
-                                    <input type="radio" name="subjectAnswer${sta.index}" value="A" checked="checked"/>
+                                    <input type="radio" name="jdugeAnswer${sta.index}" value="A" checked="checked"/>
                                     A
-                                    <input type="radio" name="subjectAnswer${sta.index}" value="B" />
+                                    <input type="radio" name="jdugeAnswer${sta.index}" value="B" />
                                     B
-                                    <input type="radio" name="subjectAnswer${sta.index}" value="C" />
+                                    <input type="radio" name="jdugeAnswer${sta.index}" value="C" />
                                     C
-                                    <input type="radio" name="subjectAnswer${sta.index}" value="D" />
+                                    <input type="radio" name="jdugeAnswer${sta.index}" value="D" />
                                     D</td>
                             </tr>
                             </s:iterator>

@@ -95,8 +95,8 @@
 
 						<s:iterator value="#request.subjects" var="subject2" status="sta">
 							<tr>
-								<input type="hidden" name="subjectID"
-									value="${subject2.subjectID}" />
+								<input type="hidden" name="subjectId"
+									value="${subject2.subjectId}" />
 								<td colspan="3"><strong>第<span class="STYLE5">${sta.index + 1}</span>题&nbsp;${subject2.subjectTitle}
 								</strong></td>
 							</tr>
@@ -114,11 +114,11 @@
 							</tr>
 							<tr>
 								<td height="32" colspan="3" bgcolor="#CCCCCC">选择答案： <input
-									type="radio" name="subjectAnswer${sta.index}" value="A"
+									type="radio" name="jdugeAnswer${sta.index}" value="A"
 									checked="checked" /> A <input type="radio"
-									name="subjectAnswer${sta.index}" value="B" /> B <input
-									type="radio" name="subjectAnswer${sta.index}" value="C" /> C <input
-									type="radio" name="subjectAnswer${sta.index}" value="D" /> D
+									name="jdugeAnswer${sta.index}" value="B" /> B <input
+									type="radio" name="jdugeAnswer${sta.index}" value="C" /> C <input
+									type="radio" name="jdugeAnswer${sta.index}" value="D" /> D
 								</td>
 							</tr>
 						</s:iterator>

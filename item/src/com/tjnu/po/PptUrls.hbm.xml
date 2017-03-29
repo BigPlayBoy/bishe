@@ -3,7 +3,7 @@
 			PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.tjnu.po.PptUrls" table="pptUrls_tb"><!-- 每个class对应一个持久化对象 -->
+	<class name="com.tjnu.po.PptUrls" table="ppturls_tb"><!-- 每个class对应一个持久化对象 -->
 		<id name="pptUrlsId" type="int"><!-- id元素用来定义主键标识,并指定主键生成策略 -->
 			<generator class="increment"/>
 		</id>

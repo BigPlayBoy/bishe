@@ -7,7 +7,6 @@ import com.tjnu.dao.PptUrlDaoImpl;
 import com.tjnu.po.Ppt;
 import com.tjnu.po.PptUrls;
 import com.tjnu.po.Student;
-import com.tjnu.po.Subject;
 import com.tjnu.service.PptService;
 import com.tjnu.service.PptServiceImpl;
 import org.apache.log4j.Logger;

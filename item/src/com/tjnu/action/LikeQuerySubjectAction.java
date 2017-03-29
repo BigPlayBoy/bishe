@@ -5,10 +5,10 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.tjnu.DataBase.Subject;
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.tjnu.po.Subject;
 import com.tjnu.service.SubjectService;
 import com.tjnu.service.SubjectServiceImpl;
 import com.tjnu.util.Page;
@@ -44,9 +44,9 @@ public class LikeQuerySubjectAction extends ActionSupport {
 		List<Subject> newSubjects = new ArrayList<Subject>();//新的记录
 		//给关键字标红
 		for(Subject subject : subjects) {
-			String newTitle = subject.getSubjectTitle().replaceAll(subjectTitle,
+			String newTitle = subject.getSubjectContent().replaceAll(subjectTitle,
 						"<font color='red'>" + subjectTitle + "</font>");
-			subject.setSubjectTitle(newTitle);
+			subject.setSubjectContent(newTitle);
 			newSubjects.add(subject);
 		}
 		

@@ -4,10 +4,10 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.tjnu.DataBase.Subject;
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.tjnu.po.Subject;
 import com.tjnu.service.SubjectService;
 import com.tjnu.service.SubjectServiceImpl;
 import com.tjnu.util.Page;
@@ -29,6 +29,7 @@ public class QuerySubjectAction extends ActionSupport {
 		Page page = new Page();
 		page.setEveryPage(10);//每页显示10条记录
 		page.setCurrentPage(currentPage);//设置当前页
+
 		PageResult pageResult = subjectService.querySubjectByPage(page);
 		List<Subject> subjects = pageResult.getList();//获得试题记录
 		page = pageResult.getPage();//获得分页信息

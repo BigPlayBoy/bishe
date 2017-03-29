@@ -52,7 +52,7 @@
       </tr>
       <tr>
         <td height="32" colspan="3" bgcolor="#CCCCCC">
-		<strong>【正确答案】：${subject2.subjectAnswer}</strong><br/>
+		<strong>【正确答案】：${subject2.jdugeAnswer}</strong><br/>
         <strong>【参考解析】：${subject2.subjectParse}</strong></tr>
       </s:iterator>  
 	   <!--题目结束-->

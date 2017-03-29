@@ -60,30 +60,16 @@
             <ul>
                 <li><a href="../../index.jsp" target="_blank">首页</a></li>
                 <li><a href="jiaocai.action" target="_blank">教材</a> </li>
-                <li><a href="../../video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
+                <li><a href="queryVideo.action" target="_blank">视频</a></li>
                 <li><a href="messageQuery.action" target="_blank">讨论</a></li>
                 <li><a href="exam.action" target="_blank">测试</a> </li>
             </ul>
         </div>
         <div class="login fr">
-            <script type="text/javascript">
-                var user="";
-                var ul="<ul><li><a href='view/login/login.jsp'>登陆</a></li><li><a href='view/login/register.jsp'>注册</a></li></ul>";
-                try {
-                    if("${sessionScope.studentInfo.studentName}"!="") user="${sessionScope.studentInfo.studentName}";
-                }
-                catch (e) {
-                    alert("出了错误，我也不知道是啥"+e);
-                }
-                var welcome="<ul><li><a href='#' style='width: 150px'> 欢迎你 "+user+"</a></li></ul>";
-                if(""!=user){
-                    $(".login " ).append(welcome);
-                }
-                else {
-                    $(".login" ).append(ul);
-                }
-                <%--alert("${sessionScope.studentInfo.studentId}    :::"+user);--%>
-            </script>
+            <p>欢迎你：${sessionScope.studentInfo.studentName}</p>
+            <div class="person-hide">
+                <a href="close.action">退出</a>
+            </div>
         </div>
     </div>
 </div>
@@ -219,10 +205,7 @@
                                 下一页 | 尾页
                             </s:else>
                         </div>
-
-
                 </div>
-
             </div>
         </div>
     </div>

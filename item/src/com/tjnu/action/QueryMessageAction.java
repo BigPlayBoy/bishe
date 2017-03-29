@@ -52,7 +52,7 @@ private MessageBoardService messageBoardService=new MessageBoardServiceImpl();
             return "notLogin";
         }
         Page page = new Page();
-        page.setEveryPage(3);//每页显示10条记录
+        page.setEveryPage(3);//每页显示3条记录
         page.setCurrentPage(currentPage);//设置当前页
         PageResult pageResult = messageBoardService.queryMessageByPage(page);
         List<MessageBoard> messageBoards = pageResult.getList();//获得试题记录

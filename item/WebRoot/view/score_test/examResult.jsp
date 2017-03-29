@@ -86,17 +86,17 @@
         <div class="nav fl">
             <ul>
                 <li><a href="../../index.jsp" target="_blank">首页</a></li>
-                <li><a href="../ppt_sourse/ppt_sourse.jsp" target="_blank">教材</a></li>
-                <li><a href="../video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
-                <li><a href="../liuyanban/message.jsp" target="_blank">讨论</a></li>
-                <li><a href="#">考试</a></li>
+                <li><a href="jiaocai.action" target="_blank">教材</a> </li>
+                <li><a href="queryVideo.action" target="_blank">视频</a></li>
+                <li><a href="messageQuery.action" target="_blank">讨论</a></li>
+                <li><a href="exam.action" target="_blank">测试</a> </li>
             </ul>
         </div>
         <div class="person fr">
             <p>欢迎你：${sessionScope.studentInfo.studentName}</p>
             <div class="person-hide">
                 <!--<select class="">退出</select>-->
-                <a href="javascript:;">退出</a>
+                <a href="close.action">退出</a>
             </div>
         </div>
     </div>
@@ -117,23 +117,23 @@
     <div class="p-i-size"><span class="fl">现在是:</span><span class="time1 fl"></span>
     </div>
 </div>
-<div class="test-container">
+<div class="test-container" >
     <div class="nav clearfix">
         <div class="logo">
             <a class="logo1"><img src="../../images/course_sourse/banner/logo5.png"> </a>
         </div>
     </div>
     <div class="t-c-list">
-        <table width="1003" height="485" border="0" cellpadding="0" cellspacing="0" class="centerbg">
+        <table width="1003" height="500" border="0" cellpadding="0" cellspacing="0" class="centerbg">
             <tr>
-                <td width="149" height="485">&nbsp;</td>
+                <td width="149" height="48">&nbsp;</td>
                 <td width="741" valign="top" class="rightbian">
                     <table width="60%" align="center" cellpadding="10" cellspacing="0" border="1">
                         <tr>
                             <td height="35" colspan="2"></td>
                         </tr>
                         <tr>
-                            <td height="49" colspan="2"><div align="center"><span class="STYLE4"><strong>eggpeijun</strong>考试情况表</span></div></td>
+                            <td height="49" colspan="2"><div align="center"><span class="STYLE4"><strong>数据库原理</strong>考试情况表</span></div></td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>

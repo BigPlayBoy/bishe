@@ -50,12 +50,12 @@
 				  </tr>
 				  <s:iterator value="#request.subjects" var="subject2">
 				  	 <tr align="center">
-							<td>${subject2.subjectID}</td>
+							<td>${subject2.subjectId}</td>
 							<td align="left">${subject2.subjectTitle}</td>
-							<td>${subject2.subjectAnswer}</td>
-							<td><a href="subjectParticular.action?subjectID=${subject2.subjectID}">查看</a></td>
-							<td><a href="subjectUpadateBefore.action?subjectID=${subject2.subjectID}">更新</a></td>
-							<td><a href="subjectDelete?subjectID=${subject2.subjectID}">删除</a></td>
+							<td>${subject2.jdugeAnswer}</td>
+							<td><a href="subjectParticular.action?subjectId=${subject2.subjectId}">查看</a></td>
+							<td><a href="subjectUpadateBefore.action?subjectId=${subject2.subjectId}">更新</a></td>
+							<td><a href="subjectDelete?subjectId=${subject2.subjectId}">删除</a></td>
 					  </tr>
 				  </s:iterator>	
 				  <tr>

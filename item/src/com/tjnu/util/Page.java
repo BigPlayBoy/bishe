@@ -61,4 +61,17 @@ public class Page {
 	public void setHasNextPage(boolean hasNextPage) {//设置是否有下一页
 		this.hasNextPage = hasNextPage;
 	}
+
+	@Override
+	public String toString() {
+		return "Page{" +
+				"everyPage=" + everyPage +
+				", totalCount=" + totalCount +
+				", totalPage=" + totalPage +
+				", currentPage=" + currentPage +
+				", beginIndex=" + beginIndex +
+				", hasPrePage=" + hasPrePage +
+				", hasNextPage=" + hasNextPage +
+				'}';
+	}
 }

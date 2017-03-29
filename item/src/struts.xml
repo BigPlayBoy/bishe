@@ -19,7 +19,7 @@
  			<result name="input" >/view/login/register.jsp</result>
  		</action>
  		<action name="subjectAdd" class="com.tjnu.action.SubjectAddAction">
- 			<result name="success" type="redirect">/teacher/subjectAdd.jsp</result><!--重定向到试题添加页面-->
+ 			<result name="success" >/teacher/subjectAdd.jsp</result><!--重定向到试题添加页面-->
  			<result name="input">/teacher/subjectAdd.jsp</result><!--请求转发到试题添加页面-->
  		</action>
  		<action name="subjectQuery" class="com.tjnu.action.QuerySubjectAction">
@@ -32,7 +32,7 @@
  			<result name="success">/teacher/subjectUpdate.jsp</result><!--跳转到试题更新页面-->
  		</action>
  		<action name="subjectUpadate" class="com.tjnu.action.SubjectUpdateAction">
- 			<result name="success">/teacher/subjectUpdate.jsp</result><!--跳转到试题更新页面-->
+ 			<result name="success">/teacher/subjectShow.jsp</result><!--跳转到试题更新页面-->
  		</action>
  		<action name="subjectLikeQuery" class="com.tjnu.action.LikeQuerySubjectAction">
  			<result name="success">/teacher/subjectManage.jsp</result><!--跳转到试题列表管理页面-->
@@ -82,5 +82,15 @@
 			<result name="success" >/view/video_course_sourse/video_course_sourse.jsp</result><!--跳转到考试页面-->
 			<result name="notLogin" type="redirect" >/view/login/login.jsp</result><!--没有登陆，退到登陆界面-->
 		</action>
+		<action name="getsubject" class="com.tjnu.action.GetSubject">
+			<result name="success" >/teacher/subjectQuery.jsp</result><!--跳转到考试页面-->
+		</action>
+		<action name="subjectShow" class="com.tjnu.action.ShowSubjectAction">
+			<result name="success" >/teacher/subjectShow.jsp</result><!--跳转到考试页面-->
+		</action>
+        <action name="subjectDelete" class="com.tjnu.action.SubjectDeleteAction">
+            <result name="success" type="chain" >getsubject</result><!--重新跳转到查询试题页面页面-->
+        </action>
+
  	</package>
 </struts>

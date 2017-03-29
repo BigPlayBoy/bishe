@@ -89,7 +89,7 @@
 
                             <!--<s:iterator value="#request.subjects" var="subject" status="sta">-->
                                 <tr>
-                                    <input type="hidden" name="subjectID" value="${subject.subjectID}"/>
+                                    <input type="hidden" name="subjectId" value="${subject.subjectId}"/>
                                     <td colspan="3"><strong>第<span class="STYLE5">${sta.index + 1}</span>题&nbsp;${subject.subjectTitle}</strong>		</td>
                                 </tr>
                                 <tr>
@@ -106,13 +106,13 @@
                                 </tr>
                                 <tr>
                                     <td height="32" colspan="3" bgcolor="#CCCCCC">选择答案：
-                                        <input type="radio" name="subjectAnswer${sta.index}" value="A" checked="checked"/>
+                                        <input type="radio" name="jdugeAnswer${sta.index}" value="A" checked="checked"/>
                                         A
-                                        <input type="radio" name="subjectAnswer${sta.index}" value="B" />
+                                        <input type="radio" name="jdugeAnswer${sta.index}" value="B" />
                                         B
-                                        <input type="radio" name="subjectAnswer${sta.index}" value="C" />
+                                        <input type="radio" name="jdugeAnswer${sta.index}" value="C" />
                                         C
-                                        <input type="radio" name="subjectAnswer${sta.index}" value="D" />
+                                        <input type="radio" name="jdugeAnswer${sta.index}" value="D" />
                                         D</td>
                                 </tr>
                             <!--</s:iterator>-->

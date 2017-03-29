@@ -35,7 +35,7 @@
             <ul>
                 <li><a href="../../index.jsp" target="_blank">首页</a></li>
                 <li><a href="jiaocai.action" target="_blank">教材</a> </li>
-                <li><a href="../../video_course_sourse/video_course_sourse.jsp" target="_blank">视频</a></li>
+                <li><a href="queryVideo.action" target="_blank">视频</a></li>
                 <li><a href="messageQuery.action" target="_blank">讨论</a></li>
                 <li><a href="exam.action" target="_blank">测试</a> </li>
             </ul>
@@ -43,7 +43,7 @@
         <div class="person fr">
             <p>欢迎你：${sessionScope.studentInfo.studentName}</p>
             <div class="person-hide">
-                <a href="javascript:;">退出</a>
+                <a href="close.action">退出</a>
             </div>
         </div>
     </div>
