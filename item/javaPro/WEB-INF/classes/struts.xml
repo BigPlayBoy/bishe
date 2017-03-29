@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?><!-- XML声明 -->
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+ "http://struts.apache.org/dtds/struts-2.1.dtd"><!-- 指定Struts 2配置文件的DTD信息 -->
+<struts><!-- 根节点 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="struts2" extends="struts-default">
+ 		<action name="teacherlogin" class="com.tjnu.action.LoginAction">
+ 			<result name="studentSuccess" type="chain">getRandomSubject</result><!--进入考试页面-->
+ 			<result name="teacherSuccess" type="redirect">/teacher/index.html</result><!--老师登录成功页面-->
+ 			<result name="input">/login.jsp</result><!--登录失败页面-->
+ 		</action>
+ 		<action name="mylogin" class="com.tjnu.action.myLoginAction">
+ 			<result name="mysuccess" type="redirect">/index.jsp</result>
+            <result name="input">/login.jsp</result><!--登录失败页面-->
+ 		</action>
+ 		<action name="register" class="com.tjnu.action.RegisterAction">
+ 			<result name="registerSuccess" type="redirect">/view/login/login.jsp</result>
+ 			<result name="input" >/view/login/register.jsp</result>
+ 		</action>
+ 		<action name="subjectAdd" class="com.tjnu.action.SubjectAddAction">
+ 			<result name="success" >/teacher/subjectAdd.jsp</result><!--重定向到试题添加页面-->
+ 			<result name="input">/teacher/subjectAdd.jsp</result><!--请求转发到试题添加页面-->
+ 		</action>
+ 		<action name="subjectQuery" class="com.tjnu.action.QuerySubjectAction">
+ 			<result name="success">/teacher/subjectManage.jsp</result><!--跳转到试题列表管理页面-->
+ 		</action>
+ 		<action name="subjectParticular" class="com.tjnu.action.SubjectParticularAction">
+ 			<result name="success">/teacher/subjectShow.jsp</result><!--跳转到试题详细显示页面-->
+ 		</action>
+ 		<action name="subjectUpadateBefore" class="com.tjnu.action.SubjectUpdateBefore">
+ 			<result name="success">/teacher/subjectUpdate.jsp</result><!--跳转到试题更新页面-->
+ 		</action>
+ 		<action name="subjectUpadate" class="com.tjnu.action.SubjectUpdateAction">
+ 			<result name="success">/teacher/subjectShow.jsp</result><!--跳转到试题更新页面-->
+ 		</action>
+ 		<action name="subjectLikeQuery" class="com.tjnu.action.LikeQuerySubjectAction">
+ 			<result name="success">/teacher/subjectManage.jsp</result><!--跳转到试题列表管理页面-->
+ 		</action>
+
+ 		<action name="submitExam" class="com.tjnu.action.SubmitExamAction">
+ 			<result name="success">/view/score_test/examResult.jsp</result><!--跳转到考试页面-->
+ 		</action>
+ 		<action name="showSubjectAnswer" class="com.tjnu.action.ShowSubjectAnswer">
+ 			<result name="success">/view/score_test/showAnswer.jsp</result><!--跳转到考试页面-->
+ 		</action>
+ 		<action name="queryStudentByName" class="com.tjnu.action.QueryStudentByName">
+ 			<result name="success">/teacher/studentManage.jsp</result><!--跳转到学生管理页面-->
+ 		</action>
+ 		<action name="queryStudentByClass" class="com.tjnu.action.QueryStudentByClass">
+ 			<result name="success">/teacher/studentManage.jsp</result><!--跳转到学生管理页面-->
+ 		</action>
+		<!--//我增加的代码-->
+		<action name="liuyan" class="com.tjnu.action.LiuYan">
+			<result name="msuccess" type="chain">messageQuery</result><!--跳转到学生管理页面-->
+		</action>
+
+		<action name="messageQuery" class="com.tjnu.action.QueryMessageAction">
+			<result name="isSuccess"  >/view/liuyanban/message.jsp</result><!--跳转到留言页面-->
+			<result name="notLogin" type="redirect" >/view/login/login.jsp</result><!--没有登陆，退到登陆界面-->
+		</action>
+
+		<action name="jiaocai" class="com.tjnu.action.jiaocaiAction">
+			<result name="notLogin" type="redirect" >/view/login/login.jsp</result><!--没有登陆，退到登陆界面-->
+			<result name="success" >/view/ppt_sourse/ppt_sourse.jsp</result><!--跳转到学生管理页面-->
+		</action>
+		<action name="video" class="com.tjnu.action.videoAction">
+			<result name="notLogin" type="redirect" >/view/login/login.jsp</result><!--没有登陆，退到登陆界面-->
+			<result name="success" type="redirect">/view/video_course_sourse/video_course_sourse.jsp</result><!--跳转到学生管理页面-->
+		</action>
+		<action name="exam" class="com.tjnu.action.ExamAction">
+			<result name="notLogin" type="redirect" >/view/login/login.jsp</result><!--没有登陆，退到登陆界面-->
+			<result name="studentSuccess" type="chain">getRandomSubject</result><!--进入考试页面-->
+		</action>
+		<action name="getRandomSubject" class="com.tjnu.action.GetRandomSubject">
+			<result name="success">/view/score_test/score_test.jsp</result><!--跳转到考试页面-->
+		</action>
+		<action name="close" class="com.tjnu.action.CloseAction">
+			<result name="success" type="redirect">/index.jsp</result><!--跳转到考试页面-->
+		</action>
+		<action name="queryVideo" class="com.tjnu.action.QueryVideoAction">
+			<result name="success" >/view/video_course_sourse/video_course_sourse.jsp</result><!--跳转到考试页面-->
+			<result name="notLogin" type="redirect" >/view/login/login.jsp</result><!--没有登陆，退到登陆界面-->
+		</action>
+		<action name="getsubject" class="com.tjnu.action.GetSubject">
+			<result name="success" >/teacher/subjectQuery.jsp</result><!--跳转到考试页面-->
+		</action>
+		<action name="subjectShow" class="com.tjnu.action.ShowSubjectAction">
+			<result name="success" >/teacher/subjectShow.jsp</result><!--跳转到考试页面-->
+		</action>
+        <action name="subjectDelete" class="com.tjnu.action.SubjectDeleteAction">
+            <result name="success" type="chain" >getsubject</result><!--重新跳转到查询试题页面页面-->
+        </action>
+
+ 	</package>
+</struts>

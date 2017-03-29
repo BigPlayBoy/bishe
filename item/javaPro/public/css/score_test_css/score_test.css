@@ -1,0 +1,197 @@
+#header .header-content .person{
+    width: 176px;
+    height: 70px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    font-family: "Microsoft YaHei",sans-serif;
+    /*background: #dedede;*/
+}
+.test-container {
+    width: 1226px;
+    height: 960px;
+    position: relative;
+    margin: 10px auto 10px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 14px #90989e;
+}
+
+.test-container .nav {
+    width: 1226px;
+    height: 100px;
+    border-bottom: 3px solid #90989e;
+}
+
+.test-container .nav .logo {
+    width: 600px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.test-container .t-c-list {
+    width: 1226px;
+    height: 860px;
+    background: #F5F5F5;
+    overflow: scroll;
+}
+
+td {
+    font-size: 18px;
+}
+
+/*input, select {*/
+    /*margin: 0px;*/
+    /*padding: 0px;*/
+/*}*/
+
+.centerbg {
+    /*background-image: url(centerbg.jpg);*/
+    /*background-repeat: repeat-y;*/
+    /*background-position: left top;*/
+    width: 1003px;
+    height: 485px;
+    position: relative;
+    margin: 0 auto;
+}
+
+#text a {
+    font-size: 12px;
+    color: #364B32;
+    padding-left: 10px;
+    text-decoration: none;
+    background-image: url(letter.jpg);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+#text a:hover {
+    color: #FF0000;
+    text-decoration: none;
+    background-image: url(../../../images/score-test/images/letter1.jpg);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+/*a:link, a:visited {*/
+    /*color: #000000;*/
+    /*text-decoration: none;*/
+/*}*/
+
+a:hover {
+    color: #000000;
+}
+
+#calendar {
+    width: 170px;
+}
+
+#calendar caption {
+    font: 11px 'Century Gothic', Arial, Helvetica, sans-serif;
+}
+
+#calendar table {
+    border-collapse: collapse;
+}
+
+#calendar th {
+    font-size: 12px;
+}
+
+#calendar td {
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #699D5B;
+    color: #FFFF00;
+    background-color: #009900;
+    height: 10px;
+    width: 15px;
+}
+
+#calendar td a {
+    display: block;
+    width: 15px;
+    height: 10px;
+    color: #FF0000;
+}
+
+#calendar td a:hover {
+    color: #FFFFFF;
+}
+
+input, select, form {
+    padding: 0px;
+    margin: 0px;
+}
+
+.logt {
+    font-size: 12px;
+    line-height: 18px;
+    color: #2A2A2A;
+    text-align: left;
+    padding: 5px;
+}
+
+#com {
+    font-size: 12px;
+    color: #7A7E2C;
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    background-image: url(../../../images/score-test/images/morebg.jpg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+#com a {
+    font-size: 12px;
+    color: #7A7E2C;
+    text-decoration: none;
+}
+
+#com a:hover {
+    font-size: 12px;
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+#topic {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #618D08;
+    text-align: left;
+    padding: 2px;
+}
+
+#topic a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #618D08;
+    text-decoration: none;
+}
+
+#topic a:hover {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+.sub-button {
+    width: 106px;
+    height: 34px;
+    border-radius: 10px;
+    background: #dedede;
+    color: #000;
+    font-family: "Arial", "微软雅黑";
+    font-size: 14px;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+.sub-button:hover {
+    background: #f60;
+    color: #fff;
+}

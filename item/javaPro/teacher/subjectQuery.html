@@ -1,0 +1,78 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>试题模糊查询页面</title>
+    <style type="text/css">
+        <!--
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-color: #EEF2FB;
+        }
+        #showSubject table  td{
+            font-size:12px;
+        }
+        .select{
+            margin: 10px 10px 10px 100px;
+            width: 100px;
+            height: 20px;
+        }
+        -->
+    </style>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 可选的Bootstrap主题文件（一般不使用） -->
+    <script src="/public/bootstrap/css/bootstrap-theme.min.css"></script>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="/public/bootstrap/js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+    <link href="images/skin.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="container">
+    <div class="Submit">
+        <form action="getsubject.action" method="get">
+            <div class="input-group ">
+                <span>题型：</span>
+                <select name="tixing" class="select">
+                    <option value="0">全部</option>
+                    <option value="1">判断题</option>
+
+                    <option value="2">单选题</option>
+                    <option value="3">多选题</option>
+                </select>
+                <span>章节：</span>
+                <select name="chapter" class="select">
+                    <option value="0">全部</option>
+
+                    <option value="1">第一章</option>
+                    <option value="2">第二章</option>
+                    <option value="3">第三章</option>
+                    <option value="4">第四章</option>
+                </select>
+            <span>难易程度</span>
+            <select name="hard" class="select">
+                <option value="0">全部</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+                <span>关键字：</span>
+                <input class="form-control" type="text" placeholder="请输入关键字" name="guanjianzi">
+                <button type="submit" class="btn-default "  value="提交">提交</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
